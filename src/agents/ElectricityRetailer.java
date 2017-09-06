@@ -12,13 +12,10 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 			public void onTick() {
 				// Every second, check the received messages
 				ACLMessage message = receiveMessage();
-				if (message != null) {
-					// When we receive a message, send back an acknowledgment
-					sendReply(message, ACLMessage.AGREE, "ACK");
+				if (message != null && message.getPerformative() == ACLMessage.REQUEST) {
+					sendOffer(message, Math.floor(Math.random() * 50), Math.random() * 10);
 				}
 			}
 		});
-	
 	}
-
 }

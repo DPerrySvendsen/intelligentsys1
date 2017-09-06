@@ -1,28 +1,55 @@
 package agents;
 
-import jade.core.behaviours.TickerBehaviour;
+import java.util.HashMap;
+
+import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class ElectricityTrader extends HomeEnergyAgent {
-
+	
+	private String[] otherAgents;
+	private HashMap<String, TradeOffer> offers = new HashMap<String, TradeOffer>();
+	
 	protected void setup () {
 		super.setup();
 		
-		addBehaviour(new TickerBehaviour(this, 5 * 1000){
-			public void onTick() {
-				// Every five seconds, send a message to the other agents
-				for (String name : findOtherAgents()) {
-					sendMessage("SYN", ACLMessage.INFORM, name);
-				}
+		otherAgents = findOtherAgents();
+		
+		addBehaviour(new CyclicBehaviour(this){
+			public void action() {
+				checkOffers();
 			}
 		});
 		
-		addBehaviour(new TickerBehaviour(this, 1 * 1000){
-			public void onTick() {
-				// Every second, check the received messages, but don't do anything with them
-				receiveMessage();
+		requestOffers ();
+	}
+	
+	private void requestOffers () {
+		for (String name : otherAgents) {
+			log("Requesting offer from " + name + "...");
+			sendMessage("", ACLMessage.REQUEST, name);
+		}
+	}
+	
+	private void checkOffers () {
+		ACLMessage message = receiveMessage();
+		if (message != null) {
+			TradeOffer offer = parseOffer(message);
+			if (offer != null) {
+				offers.put(message.getSender().getLocalName(), offer);
 			}
-		});
+		}
+		if (offers.size() == otherAgents.length) {
+			log("Got all offers:");
+			for (TradeOffer offer : offers.values()) {
+				log(
+					"Offer from " + offer.getName() + ": " + String.format("%,.0f", offer.getUnitsToSell()) + 
+					" units for $"    + String.format("%,.2f", offer.getPricePerUnit()) + " per unit." + 
+					" Total price: $" + String.format("%,.2f", offer.getPriceTotal())
+				);
+			}
+			offers.clear();
+		}
 	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.Date;
 
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
 import jade.domain.AMSService;
 import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.AMSAgentDescription;
@@ -16,12 +17,12 @@ public class HomeEnergyAgent extends Agent {
 
 	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("hh:mm:ss"); 
 	
-	private static String padRight(String s, int n) {
+	private static String padRight (String s, int n) {
 		// Because Java doesn't have a sensible native way to pad strings
 		return String.format("%1$-" + n + "s", s);  
 	}
 	
-	protected void setup() {
+	protected void setup () {
 		// Print a message so we know the agent has come online
 		log("Hello World!");
 	}
@@ -57,18 +58,18 @@ public class HomeEnergyAgent extends Agent {
 		logMessage("<- ", content, performative, sender);
 	}
 	
-	protected void sendReply(ACLMessage message, int performative, String content) {
+	protected void sendReply (String content, int performative, ACLMessage message) {
 		ACLMessage reply = message.createReply();
 		reply.setPerformative(performative);
 		reply.setContent(content);
 		logMessageOutbound(
 			content, performative,
-			((AID)message.getAllReceiver().next()).getLocalName()
+			message.getSender().getLocalName()
 		);
 		send(reply);
 	}
 	
-	protected void sendMessage(String content, int performative, String[] receivers) {
+	protected void sendMessage (String content, int performative, String[] receivers) {
 		// Construct and send an outbound message to the specified receiver(s)
 		ACLMessage message = new ACLMessage(performative);
 		message.setContent(content);
@@ -99,7 +100,7 @@ public class HomeEnergyAgent extends Agent {
 		return message;
 	}
 	
-	protected String[] findOtherAgents() {
+	protected String[] findOtherAgents () {
 		// Find the local names of all other agents
 		ArrayList<String> result = new ArrayList<String>();
 		try {
@@ -119,6 +120,38 @@ public class HomeEnergyAgent extends Agent {
 		}
 		// Return the results as a String array
 		return result.toArray(new String[0]);
+	}
+	
+	protected void sendOffer (ACLMessage message, Double unitsToSell, Double pricePerUnit) {
+		sendReply(unitsToSell + " " + pricePerUnit, ACLMessage.PROPOSE, message);
+		log(
+			"Sent offer to " + message.getSender().getLocalName() + ": " + 
+			String.format("%,.2f", unitsToSell)  + " units for $" + 
+			String.format("%,.2f", pricePerUnit) + " each."
+		);
+	}
+	
+	protected TradeOffer parseOffer (ACLMessage message) {
+		if (message.getPerformative() == ACLMessage.PROPOSE) {
+			String[] content = message.getContent().split(" ");
+			try {
+				String name = message.getSender().getLocalName();
+				Double unitsToSell  = Double.parseDouble(content[0]);
+				Double pricePerUnit = Double.parseDouble(content[1]);
+				log(
+					"Received offer from " + name + ": " + 
+					String.format("%,.2f", unitsToSell)  + " units for $" + 
+					String.format("%,.2f", pricePerUnit) + " each."
+				);
+				// Create and return a trade offer
+				return new TradeOffer(name, pricePerUnit, unitsToSell);
+			}
+			catch (NumberFormatException e) {
+				// The value(s) couldn't be parsed correctly, just let the method return null
+				log("Error: Could not parse offer.");
+			}
+		}
+		return null;
 	}
 
 }
