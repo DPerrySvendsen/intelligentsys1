@@ -1,0 +1,13 @@
+- Home agent has to be able to buy electricity
+- ...and maybe sell electricity too?
+- Map system time to simulated 'day'
+- Retailer agents offer different prices
+  - Based on demand and/or other
+- Termination condition based on timeout (when requesting offers)
+- Define acceptable price range
+  - Config file
+- Negotiate for better offers from retailers
+- Implement appliances that use a specific amount of power
+- Correct use of performatives (REQUEST, AGREE, etc.)
+- Display messages
+- GUI?
