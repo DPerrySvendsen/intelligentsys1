@@ -6,7 +6,6 @@ import java.util.Date;
 
 import jade.core.AID;
 import jade.core.Agent;
-import jade.core.behaviours.WakerBehaviour;
 import jade.domain.AMSService;
 import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.AMSAgentDescription;
@@ -17,9 +16,18 @@ public class HomeEnergyAgent extends Agent {
 
 	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("hh:mm:ss"); 
 	
-	private static String padRight (String s, int n) {
+	public static String padRight (String s, int n) {
 		// Because Java doesn't have a sensible native way to pad strings
 		return String.format("%1$-" + n + "s", s);  
+	}
+	
+	public static String padLeft (String s, int n) {
+		// Because Java doesn't have a sensible native way to pad strings
+		return String.format("%1$" + n + "s", s);  
+	}
+	
+	public static String formatAsPrice (Double value) {
+		return String.format("$%,.2f", value);	
 	}
 	
 	protected void setup () {
@@ -122,12 +130,11 @@ public class HomeEnergyAgent extends Agent {
 		return result.toArray(new String[0]);
 	}
 	
-	protected void sendOffer (ACLMessage message, Double unitsToSell, Double pricePerUnit) {
-		sendReply(unitsToSell + " " + pricePerUnit, ACLMessage.PROPOSE, message);
+	protected void sendOffer (ACLMessage message, int unitsToSell, Double pricePerUnit) {
+		sendReply(unitsToSell + " " + String.format("%.2f", pricePerUnit), ACLMessage.PROPOSE, message);
 		log(
 			"Sent offer to " + message.getSender().getLocalName() + ": " + 
-			String.format("%,.2f", unitsToSell)  + " units for $" + 
-			String.format("%,.2f", pricePerUnit) + " each."
+			unitsToSell + " units for " + formatAsPrice(pricePerUnit) + " each."
 		);
 	}
 	
@@ -135,16 +142,18 @@ public class HomeEnergyAgent extends Agent {
 		if (message.getPerformative() == ACLMessage.PROPOSE) {
 			String[] content = message.getContent().split(" ");
 			try {
-				String name = message.getSender().getLocalName();
-				Double unitsToSell  = Double.parseDouble(content[0]);
-				Double pricePerUnit = Double.parseDouble(content[1]);
-				log(
-					"Received offer from " + name + ": " + 
-					String.format("%,.2f", unitsToSell)  + " units for $" + 
-					String.format("%,.2f", pricePerUnit) + " each."
-				);
 				// Create and return a trade offer
-				return new TradeOffer(name, pricePerUnit, unitsToSell);
+				TradeOffer offer = new TradeOffer(
+					message.getSender().getLocalName(),
+					Double.parseDouble(content[1]),
+					Double.parseDouble(content[0])	
+				);
+				log(
+					"Received offer from " + offer.getName() + ": " + 
+					String.format("%,.0f", offer.getUnitsToSell()) + " units for " + 
+					formatAsPrice(offer.getPricePerUnit()) + " each."
+				);
+				return offer;
 			}
 			catch (NumberFormatException e) {
 				// The value(s) couldn't be parsed correctly, just let the method return null
