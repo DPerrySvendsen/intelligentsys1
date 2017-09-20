@@ -1,13 +1,24 @@
-- Home agent has to be able to buy electricity
-- ...and maybe sell electricity too?
-- Map system time to simulated 'day'
-- Retailer agents offer different prices
-  - Based on demand and/or other
-- Termination condition based on timeout (when requesting offers)
-- Define acceptable price range
-  - Config file
-- Negotiate for better offers from retailers
-- Implement appliances that use a specific amount of power
-- Correct use of performatives (REQUEST, AGREE, etc.)
-- Display messages
-- GUI?
+In Progress
+---
+
+Anthony | Map system time to day/night cycle
+Anthony | Mechanism for Trader to decide when to query Retailers for offers
+Anthony | Mechanism for Retailer to gain power units (if they have a finite amount)
+Anthony | Mechanism for agents to identify if another agents is a Trader or Retailer
+Morgan  | Mechanism for Trader to lose power units (individual 'appliances'?)
+Morgan  | Implement Appliance class
+Morgan  | Messaging between Trader and Appliances
+Dane    | Read in settings from config file/s
+Thomas  | Mechanism for Retailers to decide how many units to offer and for what price
+Thomas  | Mechanism for Trader to decide which offer to accept, if any
+Thomas  | Mechanism to allow for offers and counter-offers between agents (with timeout?)
+        | User interface
+
+Finished
+---
+
+Dane    | Messaging and logging framework
+Dane    | Messages with appropriate performatives (open to changes)
+Dane    | Mechanism for Trader to gain power units
+Dane    | Mechanism for Retailer to lose power units
+Dane    | Proof-of-concept trading behaviour
