@@ -6,13 +6,15 @@ import jade.lang.acl.ACLMessage;
 public class ElectricityRetailer extends HomeEnergyAgent {
 
 	private int unitsHeld;
+	private int productionRate;
 	private double sellPriceMax;
 	private double sellPriceMin;
 	
 	protected void setup () {
 		super.setup();
 		
-		unitsHeld    = 40;
+		unitsHeld    = 500;
+		productionRate = 10;
 		sellPriceMax = 50;
 		sellPriceMin = 10;
 		

@@ -15,6 +15,8 @@ import jade.lang.acl.ACLMessage;
 public class HomeEnergyAgent extends Agent {
 
 	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("hh:mm:ss"); 
+	private long time = System.nanoTime();
+	private int timeScale = 0;
 	
 	public static String padRight (String s, int n) {
 		// Because Java doesn't have a sensible native way to pad strings
@@ -162,5 +164,23 @@ public class HomeEnergyAgent extends Agent {
 		}
 		return null;
 	}
-
+	
+	//Returns the time in seconds.
+	public int getRawTime() {
+		long t = System.nanoTime() - time;
+		if(t != 0)
+			t = (long)(t / Math.pow(10, 9));
+		return (int)t;
+	}
+	
+	//Returns a 24-hour format of the time
+	public String getScaledTime() {
+		timeScale = getRawTime() / 2;
+		int minutes = getRawTime() % 2;
+		int day = timeScale / 24;
+		
+		//Print in clock format
+		return "[Day " + day + ", " + (timeScale - (day * 24)) + ":" + 
+			String.format("%02d", minutes * 30) + "]";
+	}
 }

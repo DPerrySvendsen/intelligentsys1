@@ -11,24 +11,35 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	private ArrayList<String> otherAgents = new ArrayList<String>();
 	private HashMap<String, TradeOffer> offers = new HashMap<String, TradeOffer>();
 	
+	private int unitStock;
+	private int unitUsageRate;
 	private int unitsRequired;
+	/** Used as a test */
+	private double totalCostSpent;
 	private double maxBuyPrice;
+	private boolean isRequestSent;
 	
 	protected void setup () {
 		super.setup();
 		
-		addBehaviour(new CyclicBehaviour(this){
+		addBehaviour(new CyclicBehaviour(this) {
 			public void action() {
 				checkOffers();
 			}
 		});
+		totalCostSpent = 0;
+		unitStock = 200;
+		unitUsageRate = 10;
 		
 		unitsRequired = 100;
 		maxBuyPrice   = 25;
 		
+		isRequestSent = false;
+		
+		log(unitStock + " starting units. Usage rate at: " + unitUsageRate + " units.");
 		log(unitsRequired + " units required. Maximum buy price: " + formatAsPrice(maxBuyPrice));
 		
-		requestOffers();
+		consumeUnits();
 	}
 	
 	private void requestOffers () {
@@ -36,8 +47,9 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		otherAgents.clear();
 		for (String name : findOtherAgents()) {
 			otherAgents.add(name);
-			log("Requesting offer from " + name + "...");
+			log(getScaledTime() + " Requesting offer from " + name + "...");
 			sendMessage("", ACLMessage.REQUEST, name);
+			isRequestSent = true;
 		}
 	}
 	
@@ -112,15 +124,19 @@ public class ElectricityTrader extends HomeEnergyAgent {
 			// Accept the best offer, purchase the units required or the units on offer, whichever is lower
 			int unitsToBuy = (int) Math.min(unitsRequired, bestOffer.getUnitsToSell());
 			sendMessage("" + unitsToBuy, ACLMessage.AGREE, bestOffer.getName());
-			log("Accepted best offer from " + bestOffer.getName() + ". Purchased " + unitsToBuy +  
+			log(getScaledTime() + "Accepted best offer from " + bestOffer.getName() + ". Purchased " + unitsToBuy +  
 				" units for " + formatAsPrice(unitsToBuy * bestOffer.getPricePerUnit()));
+			totalCostSpent += unitsToBuy * bestOffer.getPricePerUnit();
 			unitsRequired -= unitsToBuy;
+			unitStock += unitsToBuy;
 		}
 		
 		offers.clear();
+		isRequestSent = false;
 		
 		if (unitsRequired == 0) {
 			log("Power requirements have been met.");
+			consumeUnits();
 		}
 		else {
 			log(unitsRequired + " units still required.");
@@ -128,4 +144,23 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		}
 	}
 	
+	private void consumeUnits() {
+		int unitsLost = unitUsageRate;
+		
+		try {
+			Thread.sleep(1000);			//This needs to be replaced with a non-blocking delay
+			unitStock -= unitsLost;
+			unitsRequired += unitsLost;
+			log(getScaledTime() + "Consumed " + unitsLost + " units. " + unitStock + " remaining.");
+			
+			//Request an offer when units are running low, deny if a request has already been made
+			if(unitStock < unitsRequired && !isRequestSent)
+				requestOffers();
+			else
+				consumeUnits();
+		}
+		catch(InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
 }
