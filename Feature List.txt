@@ -1,13 +1,11 @@
 In Progress
 ---
 
+		| Traders should stop querying Appliances (ie just every other agent) for offers somehow
 Anthony | Map system time to day/night cycle
 Anthony | Mechanism for Trader to decide when to query Retailers for offers
 Anthony | Mechanism for Retailer to gain power units (if they have a finite amount)
 Anthony | Mechanism for agents to identify if another agents is a Trader or Retailer
-Morgan  | Mechanism for Trader to lose power units (individual 'appliances'?)
-Morgan  | Implement Appliance class
-Morgan  | Messaging between Trader and Appliances
 Dane    | Read in settings from config file/s
 Thomas  | Mechanism for Retailers to decide how many units to offer and for what price
 Thomas  | Mechanism for Trader to decide which offer to accept, if any
@@ -17,6 +15,9 @@ Thomas  | Mechanism to allow for offers and counter-offers between agents (with 
 Finished
 ---
 
+Morgan  | Mechanism for Trader to lose power units (individual 'appliances'?)
+Morgan  | Implement Appliance class
+Morgan  | Messaging between Trader and Appliances
 Dane    | Messaging and logging framework
 Dane    | Messages with appropriate performatives (open to changes)
 Dane    | Mechanism for Trader to gain power units
