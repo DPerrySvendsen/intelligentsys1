@@ -1,6 +1,7 @@
 package agents;
 
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class ElectricityRetailer extends HomeEnergyAgent {
@@ -14,7 +15,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		super.setup();
 		
 		unitsHeld    = 500;
-		productionRate = 10;
+		productionRate = 25;
 		sellPriceMax = 50;
 		sellPriceMin = 10;
 		
@@ -27,6 +28,14 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 				if (message != null) {
 					processMessage(message);
 				}
+			}
+		});
+		
+		//Timed behaviour. Produce more units every 5 seconds
+		addBehaviour(new TickerBehaviour(this, 5000) {
+			protected void onTick() {
+				unitsHeld += productionRate;
+				//log(getScaledTime() + "Produced " + productionRate + " units. " + unitsHeld + " units in hold.");
 			}
 		});
 	}

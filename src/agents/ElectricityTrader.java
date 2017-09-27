@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class ElectricityTrader extends HomeEnergyAgent {
@@ -14,7 +15,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	private int unitStock;
 	private int unitUsageRate;
 	private int unitsRequired;
-	/** Used as a test */
+	/* Used as a test */
 	private double totalCostSpent;
 	private double maxBuyPrice;
 	private boolean isRequestSent;
@@ -27,6 +28,15 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				checkOffers();
 			}
 		});
+		
+		//Timed behaviour at each second
+		addBehaviour(new TickerBehaviour(this, 1000) {
+			protected void onTick() {
+				updateRate();
+				consumeUnits();
+			}
+		});
+		
 		totalCostSpent = 0;
 		unitStock = 200;
 		unitUsageRate = 10;
@@ -39,11 +49,11 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		log(unitStock + " starting units. Usage rate at: " + unitUsageRate + " units.");
 		log(unitsRequired + " units required. Maximum buy price: " + formatAsPrice(maxBuyPrice));
 		
-		consumeUnits();
+		//consumeUnits();
 	}
 	
 	private void requestOffers () {
-		// Find all other agents
+		//Find all other agents
 		otherAgents.clear();
 		for (String name : findOtherAgents()) {
 			otherAgents.add(name);
@@ -136,7 +146,6 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		
 		if (unitsRequired == 0) {
 			log("Power requirements have been met.");
-			consumeUnits();
 		}
 		else {
 			log(unitsRequired + " units still required.");
@@ -144,23 +153,21 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		}
 	}
 	
+	//Called onTick by the TickerBehaviour
 	private void consumeUnits() {
 		int unitsLost = unitUsageRate;
 		
-		try {
-			Thread.sleep(1000);			//This needs to be replaced with a non-blocking delay
-			unitStock -= unitsLost;
-			unitsRequired += unitsLost;
-			log(getScaledTime() + "Consumed " + unitsLost + " units. " + unitStock + " remaining.");
-			
-			//Request an offer when units are running low, deny if a request has already been made
-			if(unitStock < unitsRequired && !isRequestSent)
-				requestOffers();
-			else
-				consumeUnits();
-		}
-		catch(InterruptedException ex) {
-			ex.printStackTrace();
-		}
+		unitStock -= unitsLost;
+		unitsRequired += unitsLost;
+		log(getScaledTime() + "Consumed " + unitsLost + " units. " + unitStock + " remaining.");
+		
+		//Request an offer when units are running low, deny if a request has already been made
+		if(unitStock < unitsRequired && !isRequestSent)
+			requestOffers();
+	}
+	
+	//Hook to update usage rate when appliances are turned on
+	private void updateRate() {
+		
 	}
 }

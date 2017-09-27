@@ -175,12 +175,15 @@ public class HomeEnergyAgent extends Agent {
 	
 	//Returns a 24-hour format of the time
 	public String getScaledTime() {
-		timeScale = getRawTime() / 2;
+		int hours = getRawTime() / 2;
 		int minutes = getRawTime() % 2;
-		int day = timeScale / 24;
+		int day = hours / 24;
+		
+		//Looping around 0 to 23
+		timeScale = hours - (day * 24);
 		
 		//Print in clock format
-		return "[Day " + day + ", " + (timeScale - (day * 24)) + ":" + 
+		return "[Day " + day + ", " + timeScale + ":" + 
 			String.format("%02d", minutes * 30) + "]";
 	}
 }
