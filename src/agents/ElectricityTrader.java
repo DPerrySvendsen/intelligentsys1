@@ -14,6 +14,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	
 	private int unitStock;
 	private int unitUsageRate;
+	private int unitApplianceRequest;
 	private int unitsRequired;
 	/* Used as a test */
 	private double totalCostSpent;
@@ -32,14 +33,15 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		//Timed behaviour at each second
 		addBehaviour(new TickerBehaviour(this, 1000) {
 			protected void onTick() {
-				updateRate();
 				consumeUnits();
+				updateRate();
 			}
 		});
 		
 		totalCostSpent = 0;
 		unitStock = 200;
-		unitUsageRate = 10;
+		// unitUsageRate now dynamically updated by appliances
+		unitUsageRate = 0;
 		
 		unitsRequired = 100;
 		maxBuyPrice   = 25;
@@ -76,6 +78,13 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				if (offer != null) {
 					offers.put(message.getSender().getLocalName(), offer);
 				}
+				break;
+			case ACLMessage.INFORM:
+				// Trader has received consumption data from an Appliance, should this be in checkOffers?
+				int newConsumption = Integer.parseInt(message.getContent());
+				unitUsageRate += newConsumption;
+				// log for debugging
+				// log("received consumption data from " + message.getSender().getLocalName());
 				break;
 			case ACLMessage.FAILURE:
 				// Agent could not provide an offer, remove the agent from the list of other agents
@@ -168,6 +177,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	
 	//Hook to update usage rate when appliances are turned on
 	private void updateRate() {
-		
+		unitUsageRate = unitApplianceRequest;
+		unitApplianceRequest = 0;
 	}
 }

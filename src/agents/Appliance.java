@@ -1,6 +1,7 @@
 package agents;
 
 import jade.core.behaviours.CyclicBehaviour;
+import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class Appliance extends HomeEnergyAgent {
@@ -43,16 +44,13 @@ public class Appliance extends HomeEnergyAgent {
 			}
 		});
 		
-		addBehaviour(new CyclicBehaviour(this) {
-			public void action() {
-				int time = getRawTime();
-				if (time != oldTime) {
-					int choppedTime = time % 48;
-					int unitsUsed = demandMatrix[applianceType][choppedTime];
-					if (unitsUsed != 0) {
-						sendConsumption(unitsUsed);
-					}
-					oldTime = time;
+		//Timed behaviour at each second
+		addBehaviour(new TickerBehaviour(this, 1000) {
+			protected void onTick() {
+				int choppedTime = getRawTime() % 48;
+				int unitsUsed = demandMatrix[applianceType][choppedTime];
+				if (unitsUsed != 0) {
+					sendConsumption(unitsUsed);
 				}
 			}
 		});
