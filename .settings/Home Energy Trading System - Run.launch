@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/HomeEnergyTradingSystem/lib/jade.jar"/>
+<listEntry value="/intelligentsys1/lib/jade.jar"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="jade.Boot"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-gui -agents ElectricityTrader1:agents.ElectricityTrader;ElectricityRetailer1:agents.ElectricityRetailer;ElectricityRetailer2:agents.ElectricityRetailer;ElectricityRetailer3:agents.ElectricityRetailer"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="HomeEnergyTradingSystem"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-gui -agents ElectricityTrader1:agents.ElectricityTrader;ElectricityRetailer1:agents.ElectricityRetailer;ElectricityRetailer2:agents.ElectricityRetailer;ElectricityRetailer3:agents.ElectricityRetailer;Appliance1:agents.Appliance;Appliance2:agents.Appliance;Appliance3:agents.Appliance;Appliance4:agents.Appliance;Appliance5:agents.Appliance;Appliance6:agents.Appliance;Appliance7:agents.Appliance;Appliance8:agents.Appliance;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="intelligentsys1"/>
 </launchConfiguration>
