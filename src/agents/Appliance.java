@@ -47,7 +47,7 @@ public class Appliance extends HomeEnergyAgent {
 		//Timed behaviour at each second
 		addBehaviour(new TickerBehaviour(this, 1000) {
 			protected void onTick() {
-				int choppedTime = getRawTime() % 48;
+				int choppedTime = getRunTime() % 48;
 				int unitsUsed = demandMatrix[applianceType][choppedTime];
 				if (unitsUsed != 0) {
 					sendConsumption(unitsUsed);
@@ -86,7 +86,6 @@ public class Appliance extends HomeEnergyAgent {
 	
 	private void sendConsumption(int consumedAmount) {
 		sendMessage(Integer.toString(consumedAmount), ACLMessage.INFORM, myTrader);
-		String theTime = getScaledTime();
 		// log for debugging
 		// log(theTime + typeList[applianceType] + " used " + consumedAmount + " unit(s) of power.");
 	}

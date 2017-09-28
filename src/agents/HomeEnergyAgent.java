@@ -1,5 +1,12 @@
 package agents;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,9 +21,13 @@ import jade.lang.acl.ACLMessage;
 
 public class HomeEnergyAgent extends Agent {
 
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("hh:mm:ss"); 
-	private long time = System.nanoTime();
-	private int timeScale = 0;
+	private static final String           OUTPUT_FILENAME       = "output.csv";
+	private static final SimpleDateFormat DATE_FORMAT_SIMULATED = new SimpleDateFormat("'Day' DD hh:mmaa");
+	private static final SimpleDateFormat DATE_FORMAT_SYSTEM    = new SimpleDateFormat("hh:mm:ssaa"); 
+	
+	// One (system) second equals how many (simulated) minutes?
+	private static long timeScale = 30;
+	private static long startupTime = System.currentTimeMillis();
 	
 	public static String padRight (String s, int n) {
 		// Because Java doesn't have a sensible native way to pad strings
@@ -35,14 +46,56 @@ public class HomeEnergyAgent extends Agent {
 	protected void setup () {
 		// Print a message so we know the agent has come online
 		log("Hello World!");
+		// Create the output file (or clear it if it already exists)
+		createFile(OUTPUT_FILENAME);
+	}
+	
+	private void createFile (String path) {
+		try {
+			BufferedWriter writer = new BufferedWriter(
+				new OutputStreamWriter(
+					new FileOutputStream(path), "utf-8"
+				)
+			); 
+			writer.close();
+		}
+		catch (IOException e) {}
+	}
+	
+	private void writeToFile (String path, String content) {
+		try {
+			Files.write(Paths.get(path), content.getBytes(), StandardOpenOption.APPEND);
+		} 
+		catch (IOException e) {}
+	}
+	
+	private void outputToCSV(String[] outputValues) {
+		// Format the array of output values as comma-separated values 
+		// and append them to the output file
+		String outputLine = "";
+		boolean addComma = false;
+		for (String value : outputValues) {
+			outputLine += (addComma ? "," : "") + value.replace(",", "");
+			addComma = true;
+		}
+		outputLine += "\n";
+		writeToFile(OUTPUT_FILENAME, outputLine);
 	}
 	
 	protected void log (String message) {
-		// Print the time, the agent's name and the message
-		System.out.println(
-			DATE_FORMAT.format(new Date()) + 
-			" " + padRight(getLocalName(), 22) + " " + message
-		);
+		// Print the system time, simulated time, the agent's name and the message
+		outputToCSV(new String [] {
+			getFormattedSystemTime(),
+			getFormattedSimulatedTime(),
+			getLocalName(),
+			message
+		});
+		String output = 
+			getFormattedSystemTime() + " " + 
+			getFormattedSimulatedTime() + " " +
+			padRight(getLocalName(), 22) + " " + 
+			message;
+		System.out.println(output);
 	}
 	
 	protected void log (Object messageObject) {
@@ -165,25 +218,18 @@ public class HomeEnergyAgent extends Agent {
 		return null;
 	}
 	
-	//Returns the time in seconds.
-	public int getRawTime() {
-		long t = System.nanoTime() - time;
-		if(t != 0)
-			t = (long)(t / Math.pow(10, 9));
-		return (int)t;
+	// Returns the system time in seconds since the program started
+	public int getRunTime () {
+		return (int) ((System.currentTimeMillis() - startupTime) / 100);
 	}
 	
-	//Returns a 24-hour format of the time
-	public String getScaledTime() {
-		int hours = getRawTime() / 2;
-		int minutes = getRawTime() % 2;
-		int day = hours / 24;
-		
-		//Looping around 0 to 23
-		timeScale = hours - (day * 24);
-		
-		//Print in clock format
-		return "[Day " + day + ", " + timeScale + ":" + 
-			String.format("%02d", minutes * 30) + "]";
+	// Returns the formatted system time
+	private String getFormattedSystemTime() {
+		return DATE_FORMAT_SYSTEM.format(new Date());
+	}
+	
+	// Returns the formatted simulated time
+	private String getFormattedSimulatedTime() {
+		return DATE_FORMAT_SIMULATED.format((System.currentTimeMillis() - startupTime) * 60 * timeScale);
 	}
 }

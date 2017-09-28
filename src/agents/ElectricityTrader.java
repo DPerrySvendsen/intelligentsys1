@@ -59,7 +59,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		otherAgents.clear();
 		for (String name : findOtherAgents()) {
 			otherAgents.add(name);
-			log(getScaledTime() + " Requesting offer from " + name + "...");
+			log("Requesting offer from " + name + "...");
 			sendMessage("", ACLMessage.REQUEST, name);
 			isRequestSent = true;
 		}
@@ -143,7 +143,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 			// Accept the best offer, purchase the units required or the units on offer, whichever is lower
 			int unitsToBuy = (int) Math.min(unitsRequired, bestOffer.getUnitsToSell());
 			sendMessage("" + unitsToBuy, ACLMessage.AGREE, bestOffer.getName());
-			log(getScaledTime() + "Accepted best offer from " + bestOffer.getName() + ". Purchased " + unitsToBuy +  
+			log("Accepted best offer from " + bestOffer.getName() + ". Purchased " + unitsToBuy +  
 				" units for " + formatAsPrice(unitsToBuy * bestOffer.getPricePerUnit()));
 			totalCostSpent += unitsToBuy * bestOffer.getPricePerUnit();
 			unitsRequired -= unitsToBuy;
@@ -161,18 +161,19 @@ public class ElectricityTrader extends HomeEnergyAgent {
 			requestOffers();
 		}
 	}
-	
+
 	//Called onTick by the TickerBehaviour
-	private void consumeUnits() {
+	private void consumeUnits () {
 		int unitsLost = unitUsageRate;
 		
 		unitStock -= unitsLost;
 		unitsRequired += unitsLost;
-		log(getScaledTime() + "Consumed " + unitsLost + " units. " + unitStock + " remaining.");
+		log("Consumed " + unitsLost + " units. " + unitStock + " remaining.");
 		
 		//Request an offer when units are running low, deny if a request has already been made
-		if(unitStock < unitsRequired && !isRequestSent)
+		if(unitStock < unitsRequired && !isRequestSent) {
 			requestOffers();
+		}
 	}
 	
 	//Hook to update usage rate when appliances are turned on
