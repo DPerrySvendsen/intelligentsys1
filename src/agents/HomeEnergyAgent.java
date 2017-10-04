@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -46,6 +47,8 @@ public class HomeEnergyAgent extends Agent {
 	}
 	
 	protected void setup () {
+		// Set the timezone to GMT (+0)
+		DATE_FORMAT_SIMULATED.setTimeZone(TimeZone.getTimeZone("GMT"));
 		// Print a message so we know the agent has come online
 		log("Hello World!");
 		// Create the output file (or clear it if it already exists)
@@ -97,7 +100,7 @@ public class HomeEnergyAgent extends Agent {
 			getFormattedSimulatedTime() + " " +
 			padRight(getLocalName(), 22) + " " + 
 			message;
-		System.out.println(getCurrentHour() + " " + output);
+		System.out.println(output);
 	}
 	
 	protected void log (Object messageObject) {
@@ -226,7 +229,7 @@ public class HomeEnergyAgent extends Agent {
 	}
 	
 	// Returns the formatted system time
-	private String getFormattedSystemTime() {
+	private String getFormattedSystemTime() {		
 		return DATE_FORMAT_SYSTEM.format(new Date());
 	}
 	
