@@ -9,7 +9,9 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import jade.core.AID;
 import jade.core.Agent;
@@ -95,7 +97,7 @@ public class HomeEnergyAgent extends Agent {
 			getFormattedSimulatedTime() + " " +
 			padRight(getLocalName(), 22) + " " + 
 			message;
-		System.out.println(output);
+		System.out.println(getCurrentHour() + " " + output);
 	}
 	
 	protected void log (Object messageObject) {
@@ -228,8 +230,22 @@ public class HomeEnergyAgent extends Agent {
 		return DATE_FORMAT_SYSTEM.format(new Date());
 	}
 	
+	private Date getSimulatedDate () {
+	    return new Date((System.currentTimeMillis() - startupTime) * 60 * timeScale);
+	}
+	
 	// Returns the formatted simulated time
 	private String getFormattedSimulatedTime() {
-		return DATE_FORMAT_SIMULATED.format((System.currentTimeMillis() - startupTime) * 60 * timeScale);
+		return DATE_FORMAT_SIMULATED.format(getSimulatedDate());
+	}
+	
+	public int getCurrentHour() {
+		Calendar cal = new GregorianCalendar();
+		cal.setTime(getSimulatedDate());
+		return cal.get(Calendar.HOUR_OF_DAY);
+	}
+	
+	public long getTimeScale() {
+		return timeScale;
 	}
 }
