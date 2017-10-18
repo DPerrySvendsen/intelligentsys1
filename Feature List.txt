@@ -9,6 +9,7 @@ Dane    | Read in settings from config file/s
 Thomas  | Mechanism for Trader to decide which offer to accept, if any
 Thomas  | Mechanism to allow for offers and counter-offers between agents (with timeout?)
         | Trader sells electricity back to retailer 
+        | Fix issue with time/date not matching 
          
 Finished
 ---

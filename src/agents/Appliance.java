@@ -8,7 +8,7 @@ public class Appliance extends HomeEnergyAgent {
 	// hard coded Trader, fix to make more flexible
 	private String myTrader = "ElectricityTrader1";
 	private int applianceType;
-	// demandMatrix is a 12 x 48 matrix of demand values for different appliances 12 types of appliance, 48 time periods for demand
+	// demandMatrix is a 13 x 48 matrix of demand values for different appliances 13 types of appliance, 48 time periods for demand
 	private int[][] demandMatrix;
 	private String[] typeList;
 	private boolean consumptionSent;
@@ -18,7 +18,7 @@ public class Appliance extends HomeEnergyAgent {
 		super.setup();
 		
 		// myAgent = ElectricityTrader1;
-		typeList = new String[] {"Toaster", "Conditioner of Air", "Fridge", "Microwave", "Coffee Machine", "Lamp", "Phone Charger", "Washing Machine", "Dryer", "TV"};
+		typeList = new String[] {"Toaster", "Conditioner of Air", "Fridge", "Microwave", "Coffee Machine", "Lamp", "Phone Charger", "Washing Machine", "Dryer", "TV", "Solar Panel"};
 		
 		// demand matrix for types
 		//							00:00		  03:00		   06:00	    09:00		 12:00		  15:00		   18:00		21:00
@@ -31,7 +31,8 @@ public class Appliance extends HomeEnergyAgent {
 									{1,0,1,0,1,0, 1,0,0,1,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,1,1,1,1},
 									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,6,6,6,0, 0,0,8,8,8,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0},
 									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,9, 9,9,9,0,0,9, 9,9,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0},
-									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,3,3,3,3,3, 3,3,3,3,3,3, 3,3,3,3,0,0}};
+									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,3,3,3,3,3, 3,3,3,3,3,3, 3,3,3,3,0,0},
+									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,-1,-1, -1,-2,-2,-2,-3,-3, -3,-4,-4,-3,-2,-2, -1,-1,0,0,0,0, 0,0,0,0,0,0}};
 		
 		// has ability to process messages 
 		addBehaviour(new CyclicBehaviour(this){
@@ -47,8 +48,9 @@ public class Appliance extends HomeEnergyAgent {
 		//Timed behaviour at each second
 		addBehaviour(new TickerBehaviour(this, 1000) {
 			protected void onTick() {
-				int choppedTime = getRunTime() % 48;
-				int unitsUsed = demandMatrix[applianceType][choppedTime];
+				// ISSUE: getCurrentHour() returns different value from formatted simulated time so clocks are out by 10 hours
+				// log("It is " + getCurrentHour() );
+				int unitsUsed = demandMatrix[applianceType][getCurrentHour()*2];
 				if (unitsUsed != 0) {
 					sendConsumption(unitsUsed);
 				}
