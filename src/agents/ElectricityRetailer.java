@@ -1,12 +1,17 @@
 package agents;
 
+import java.util.ArrayList;
+
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
-
 public class ElectricityRetailer extends HomeEnergyAgent {
 
+	private int retailerType = 0;
+	private ArrayList<Integer> unitTrades = new ArrayList<>();
+	private ArrayList<Double> priceTrades = new ArrayList<>();
+	
 	private double unitsHeld = 0;
 	private double productionRate = 0;
 	private double sellPriceMax = 0;
@@ -15,11 +20,14 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 	protected void setup () {
 		super.setup();
 		
+		//Initialise specific calculations depending on what the retailer is to do.
+		//@param aType a integer to define what type of retailer it is. Collected from csv configuration.
+		setupRetailerType(0);
+		
 		sellPriceMax = calculateMaxPrice();
 		sellPriceMin = calculateMinPrice();
-		productionRate = calculateProductionRate();
-		unitsHeld = calculateUnitsHeld();
-		
+		productionRate = 50;
+		unitsHeld = 300;
 		
 		log(unitsHeld + " units held. Sell price range: " + formatAsPrice(sellPriceMin) + " - " + formatAsPrice(sellPriceMax));
 		
@@ -37,58 +45,89 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		addBehaviour(new TickerBehaviour(this, 5000) {
 			protected void onTick() {
 				unitsHeld += productionRate;
-				//log(getScaledTime() + "Produced " + productionRate + " units. " + unitsHeld + " units in hold.");
+				log("Produced " + productionRate + " units. " + unitsHeld + " units in hold.");
 			}
 		});
 		
 		//Timed behaviour. Update relevant values every hour of simulated time
-				addBehaviour(new TickerBehaviour(this, (60/getTimeScale() * 1000 )) {
-					protected void onTick() {
-						calculateMinPrice();
-						calculateMaxPrice();
-						calculateProductionRate();
-						calculateUnitsHeld();
-					}
-				});
+		addBehaviour(new TickerBehaviour(this, (60/getTimeScale() * 1000 )) {
+			protected void onTick() {
+				calculateMinPrice();
+				calculateMaxPrice();
+				//calculateProductionRate();
+				//calculateUnitsHeld();
+			}
+		});
+	}
+	
+	/**
+	 * Retailer Types:
+	 * 0: Be just a retailer that sells on a fixed price.
+	 * 1: Sell on a price that depends on the time of day.
+	 * 2: Supply and Demand.
+	 * 
+	 * @param aType collect from the config on how the retailer is to work.
+	 */
+	private void setupRetailerType(int aType) {
+		retailerType = aType;
 	}
 	
 	//Sets the minimum price of a unit based on the current simulated time
 	public Double calculateMinPrice() {
-		//An array of the min prices the retailer will sell a unit for	
-		Double minPrices[] = new Double[24];
 		
+		switch(retailerType) {
 		
-		//The index represents the respective hour and the value is the min sell price
-		//Eg. minPrices[15] = 16 means that at 3pm the min sell price is $16
-		minPrices[0] = (double) 13;
-		minPrices[1] = (double) 8;
-		minPrices[2] = (double) 7;
-		minPrices[3] = (double) 5;
-		minPrices[4] = (double) 5;
-		minPrices[5] = (double) 7;
-		minPrices[6] = (double) 16;
-		minPrices[7] = (double) 20;
-		minPrices[8] = (double) 18;
-		minPrices[9] = (double) 16;
-		minPrices[10] = (double) 15;
-		minPrices[11] = (double) 13;
-		minPrices[12] = (double) 12;
-		minPrices[13] = (double) 12;
-		minPrices[14] = (double) 14;
-		minPrices[15] = (double) 16;
-		minPrices[16] = (double) 18;
-		minPrices[17] = (double) 22;
-		minPrices[18] = (double) 25;
-		minPrices[19] = (double) 27;
-		minPrices[20] = (double) 23;
-		minPrices[21] = (double) 20;
-		minPrices[22] = (double) 18;
-		minPrices[23] = (double) 15;
-		
-		for(int i = 0; i < minPrices.length; i++){
-			if(getCurrentHour() == i) {
-				sellPriceMin = minPrices[i];
+		case 0:		//fixed minimum price
+			sellPriceMin = 0.075D;
+			break;
+			
+		case 1:		//time-based pricing
+			//An array of the min prices the retailer will sell a unit for	
+			Double minPrices[] = new Double[24];
+			
+			//The index represents the respective hour and the value is the min sell price
+			//Eg. minPrices[15] = 16 means that at 3pm the min sell price is $16
+			//Index is mapped to a dual-peak design
+			minPrices[0] = 0.02D;		//12am
+			minPrices[1] = 0.01D;
+			minPrices[2] = 0.005D;
+			minPrices[3] = 0.0025D;
+			minPrices[4] = 0.005D;
+			minPrices[5] = 0.01D;
+			minPrices[6] = 0.02D;		//6am
+			minPrices[7] = 0.05D;
+			minPrices[8] = 0.07D;
+			minPrices[9] = 0.07D;
+			minPrices[10] = 0.06D;
+			minPrices[11] = 0.06D;
+			minPrices[12] = 0.08D;	//12pm
+			minPrices[13] = 0.04D;
+			minPrices[14] = 0.03D;
+			minPrices[15] = 0.02D;
+			minPrices[16] = 0.02D;
+			minPrices[17] = 0.04D;
+			minPrices[18] = 0.06D;	//6pm
+			minPrices[19] = 0.08D;
+			minPrices[20] = 0.08D;
+			minPrices[21] = 0.06D;
+			minPrices[22] = 0.04D;
+			minPrices[23] = 0.03D;	//11pm
+			
+			for(int i = 0; i < minPrices.length; i++){
+				if(getCurrentHour() == i) {
+					sellPriceMin = minPrices[i];
+				}
 			}
+			break;
+			
+		case 2:		//Adaptive pricing
+			break;
+			
+		default:
+			//default to fixed minimum price
+			log(getLocalName() + " did not get a type number! Defaulting to fixed range.");
+			sellPriceMin = 0.075D;
+			break;
 		}
 		
 		return sellPriceMin;
@@ -96,66 +135,84 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 	
 	//Sets the maximum price of a unit based on the current simulated time
 	public Double calculateMaxPrice() {
-		//An array of the max prices the retailer will sell a unit for	
-		Double maxPrices[] = new Double[24];
 		
-		//The index represents the respective hour and the value is the max sell price
-		//Eg. minPrices[15] = 16 means that at 3pm the max sell price is $16
-		maxPrices[0] = (double) 33;
-		maxPrices[1] = (double) 28;
-		maxPrices[2] = (double) 27;
-		maxPrices[3] = (double) 25;
-		maxPrices[4] = (double) 25;
-		maxPrices[5] = (double) 27;
-		maxPrices[6] = (double) 36;
-		maxPrices[7] = (double) 40;
-		maxPrices[8] = (double) 38;
-		maxPrices[9] = (double) 36;
-		maxPrices[10] = (double) 35;
-		maxPrices[11] = (double) 33;
-		maxPrices[12] = (double) 32;
-		maxPrices[13] = (double) 32;
-		maxPrices[14] = (double) 34;
-		maxPrices[15] = (double) 36;
-		maxPrices[16] = (double) 38;
-		maxPrices[17] = (double) 42;
-		maxPrices[18] = (double) 45;
-		maxPrices[19] = (double) 47;
-		maxPrices[20] = (double) 43;
-		maxPrices[21] = (double) 40;
-		maxPrices[22] = (double) 38;
-		maxPrices[23] = (double) 35;
+		switch(retailerType) {
 		
-		for(int i = 0; i < maxPrices.length; i++){
-			if(getCurrentHour() == i) {
-				sellPriceMax = maxPrices[i];
+		case 0:		//fixed maximum price
+			sellPriceMax = 0.075D;
+			break;
+			
+		case 1:		//time-based pricing
+			//An array of the max prices the retailer will sell a unit for	
+			Double maxPrices[] = new Double[24];
+			
+			//The index represents the respective hour and the value is the max sell price
+			//Eg. minPrices[15] = 16 means that at 3pm the max sell price is $16
+			maxPrices[0] = 0.04D;
+			maxPrices[1] = 0.02D;
+			maxPrices[2] = 0.01D;
+			maxPrices[3] = 0.01D;
+			maxPrices[4] = 0.01D;
+			maxPrices[5] = 0.02D;
+			maxPrices[6] = 0.03D;
+			maxPrices[7] = 0.07D;
+			maxPrices[8] = 0.08D;
+			maxPrices[9] = 0.08D;
+			maxPrices[10] = 0.07D;
+			maxPrices[11] = 0.065D;
+			maxPrices[12] = 0.1D;
+			maxPrices[13] = 0.06D;
+			maxPrices[14] = 0.05D;
+			maxPrices[15] = 0.04D;
+			maxPrices[16] = 0.04D;
+			maxPrices[17] = 0.06D;
+			maxPrices[18] = 0.08D;
+			maxPrices[19] = 0.11D;
+			maxPrices[20] = 0.1D;
+			maxPrices[21] = 0.08D;
+			maxPrices[22] = 0.07D;
+			maxPrices[23] = 0.05D;
+			
+			for(int i = 0; i < maxPrices.length; i++){
+				if(getCurrentHour() == i) {
+					sellPriceMax = maxPrices[i];
+				}
 			}
+			break;
+		
+		case 2:		//Adaptive pricing
+			break;
+			
+		default:
+			//default to some maximum price
+			log(getLocalName() + " did not get a type number! Defaulting to fixed range.");
+			sellPriceMax = 0.075D;
+			break;
 		}
 		
 		return sellPriceMax;
 	}
 	
-	public Double calculateProductionRate(){
-		productionRate = 10 + 2 * sellPriceMin;
-		return productionRate;
-	}
-	
-	public Double calculateUnitsHeld() {
-		unitsHeld = sellPriceMin * 10;
-		return unitsHeld;
-	}
-	
 	private void processMessage (ACLMessage message) {
+		double price = 0D;
+		
 		switch (message.getPerformative()) {
 			
 			case ACLMessage.REQUEST:
 				if (unitsHeld > 0) {
+					if(retailerType == 0) {
+						price = sellPriceMin;
+					}
+					else {
+						// Random price within range if not fixed range
+						price = Math.random() * (sellPriceMax - sellPriceMin) + sellPriceMin;
+					}
+						
 					sendOffer(
 						message,
 						// Random amount of units held
 						(int) (Math.random() * (unitsHeld - 1) + 1),
-						// Random price within range
-						Math.random() * (sellPriceMax - sellPriceMin) + sellPriceMin
+						price
 					);
 					break;
 				}
@@ -174,8 +231,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 
 			case ACLMessage.REFUSE:
 				// For now, do nothing
-				break;
-				
+				break;		
 		}
 	}
 }
