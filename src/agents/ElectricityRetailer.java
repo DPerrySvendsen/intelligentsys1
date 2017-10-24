@@ -27,7 +27,6 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		
 		sellPriceMax = calculateMaxPrice();
 		sellPriceMin = calculateMinPrice();
-		productionRate = 35;
 		unitsHeld = 300;
 		
 		log(unitsHeld + " units held. Sell price range: " + formatAsPrice(sellPriceMin) + " - " + formatAsPrice(sellPriceMax));
@@ -45,7 +44,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		//Timed behaviour. Produce more units every 5 seconds
 		addBehaviour(new TickerBehaviour(this, 5000) {
 			protected void onTick() {
-				unitsHeld += productionRate;
+				generatePowerUnits();
 				log("Produced " + productionRate + " units. " + unitsHeld + " units in hold.");
 			}
 		});
@@ -78,7 +77,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		switch(retailerType) {
 		
 		case 0:		//fixed minimum price
-			sellPriceMin = 0.025D;
+			sellPriceMin = 0.2D;
 			break;
 			
 		case 1:		//time-based pricing
@@ -123,7 +122,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		case 2:		
 			//Adaptive supply pricing
 			sellPriceMin = (double)1 - ((unitsHeld / 10) * 0.01);
-			if(sellPriceMin < 0.02D){
+			if(sellPriceMin < 0.01D){
 				sellPriceMin = 0.01D;
 			}
 			break;
@@ -131,7 +130,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		default:
 			//default to fixed minimum price
 			log(getLocalName() + " did not get a type number! Defaulting to fixed range.");
-			sellPriceMin = 0.025D;
+			sellPriceMin = 0.2D;
 			break;
 		}
 		
@@ -144,7 +143,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		switch(retailerType) {
 		
 		case 0:		//fixed maximum price
-			sellPriceMax = 0.025D;
+			sellPriceMax = 0.2D;
 			break;
 			
 		case 1:		//time-based pricing
@@ -195,7 +194,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		default:
 			//default to some maximum price
 			log(getLocalName() + " did not get a type number! Defaulting to fixed range.");
-			sellPriceMax = 0.025D;
+			sellPriceMax = 0.2D;
 			break;
 		}
 		
@@ -256,5 +255,19 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		}
 		
 		return result;
+	}
+	
+	private void generatePowerUnits(){
+		
+		int hour = getCurrentHour();
+		
+		//if between 6am and 8pm
+		if(hour > 6 && hour < 20){
+			productionRate = 35;
+		} else {
+			productionRate = 10;
+		}
+		//Add to supply
+		unitsHeld += productionRate;
 	}
 }
