@@ -44,7 +44,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		unitUsageRate = 0;
 		
 		unitsRequired = 100;
-		maxBuyPrice   = 25;
+		maxBuyPrice   = 0.30D;
 		
 		isRequestSent = false;
 		
