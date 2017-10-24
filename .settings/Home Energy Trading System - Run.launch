@@ -8,6 +8,6 @@
 </listAttribute>
 <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="jade.Boot"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-gui -agents ElectricityTrader1:agents.ElectricityTrader;ElectricityRetailer1:agents.ElectricityRetailer;ElectricityRetailer2:agents.ElectricityRetailer;ElectricityRetailer3:agents.ElectricityRetailer;Appliance1:agents.Appliance;Appliance2:agents.Appliance;Appliance3:agents.Appliance;Appliance4:agents.Appliance;Appliance5:agents.Appliance;Appliance6:agents.Appliance;Appliance7:agents.Appliance;Appliance8:agents.Appliance;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-gui -agents ElectricityTrader1:agents.ElectricityTrader;ElectricityRetailer1:agents.ElectricityRetailer;ElectricityRetailer2:agents.ElectricityRetailer;ElectricityRetailer3:agents.ElectricityRetailer;Toaster:agents.Appliance;AirCon:agents.Appliance;Fridge:agents.Appliance;Microwave:agents.Appliance;CoffeeMachine:agents.Appliance;Lamp:agents.Appliance;PhoneCharger:agents.Appliance;WashingMachine:agents.Appliance;Dryer:agents.Appliance;TV:agents.Appliance;SolarPanel:agents.Appliance;"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="intelligentsys1"/>
 </launchConfiguration>

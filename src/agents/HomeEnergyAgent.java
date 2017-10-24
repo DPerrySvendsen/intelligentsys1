@@ -24,7 +24,7 @@ import jade.lang.acl.ACLMessage;
 
 public class HomeEnergyAgent extends Agent {
 
-	private static final String           OUTPUT_FILENAME       = "output.csv";
+	private static final String           OUTPUT_FILENAME       = "data_visualiser/output.csv";
 	private static final SimpleDateFormat DATE_FORMAT_SIMULATED = new SimpleDateFormat("'Day' DD hh:mmaa");
 	private static final SimpleDateFormat DATE_FORMAT_SYSTEM    = new SimpleDateFormat("hh:mm:ssaa"); 
 	
@@ -114,7 +114,7 @@ public class HomeEnergyAgent extends Agent {
 		log(
 			direction + padRight(localName, 22) + " [" + 
 			ACLMessage.getPerformative(performative) +
-			"] \"" + content + "\""
+			"] " + content
 		);
 	}
 	
