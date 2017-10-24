@@ -16,10 +16,13 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	private int unitUsageRate;
 	private int unitApplianceRequest;
 	private int unitsRequired;
-	/* Used as a test */
+	
 	private double totalCostSpent;
 	private double maxBuyPrice;
 	private boolean isRequestSent;
+	
+	/* Used as a test */
+	private boolean negotateOffers;
 	
 	protected void setup () {
 		super.setup();
@@ -83,13 +86,16 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				// Trader has received consumption data from an Appliance, should this be in checkOffers?
 				int newConsumption = Integer.parseInt(message.getContent());
 				unitUsageRate += newConsumption;
+				
 				// log for debugging
 				// log("received consumption data from " + message.getSender().getLocalName());
 				break;
 			case ACLMessage.FAILURE:
 				// Agent could not provide an offer, remove the agent from the list of other agents
 				String name = message.getSender().getLocalName();
-				log("No offer from " + name);
+				if(!name.contains("Appliance")){
+					log("No offer from " + name);
+				}
 				otherAgents.remove(name);
 		};
 		// Has an offer been received from all other agents?
@@ -122,9 +128,8 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		if (bestOffer == null) {
 			return;
 		}
-		
 		log("The best offer is " + formatAsPrice(bestOffer.getPricePerUnit()) + " per unit from " + bestOffer.getName());
-		
+
 		// Reject all other offers
 		for (TradeOffer offer : offers.values()) {
 			if (offer != bestOffer) {

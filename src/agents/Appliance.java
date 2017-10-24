@@ -18,7 +18,7 @@ public class Appliance extends HomeEnergyAgent {
 		super.setup();
 		
 		// myAgent = ElectricityTrader1;
-		typeList = new String[] {"Toaster", "Conditioner of Air", "Fridge", "Microwave", "Coffee Machine", "Lamp", "Phone Charger", "Washing Machine", "Dryer", "TV", "Solar Panel"};
+		typeList = new String[] {"Toaster", "Conditioner of Air", "Fridge", "Microwave", "Coffee Machine", "Lamp", "Phone Charger", "Washing Machine", "Dryer", "TV", "Solar Panels"};
 		
 		// demand matrix for types
 		//							00:00		  03:00		   06:00	    09:00		 12:00		  15:00		   18:00		21:00
@@ -32,7 +32,7 @@ public class Appliance extends HomeEnergyAgent {
 									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,6,6,6,0, 0,0,8,8,8,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0},
 									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,9, 9,9,9,0,0,9, 9,9,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0},
 									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,3,3,3,3,3, 3,3,3,3,3,3, 3,3,3,3,0,0},
-									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,0,-1,-1, -1,-2,-2,-2,-3,-3, -3,-4,-4,-3,-2,-2, -1,-1,0,0,0,0, 0,0,0,0,0,0}};
+									{0,0,0,0,0,0, 0,0,0,0,0,0, 0,0,0,-1,-3,-6, -6,-6,-6,-6,-7,-9, -9,-10,-12,-15,-15,-18, -18,-18,-17,-15,-12,-10, -8,-5,-2,0,0,0, 0,0,0,0,0,0}};
 		
 		// has ability to process messages 
 		addBehaviour(new CyclicBehaviour(this){
