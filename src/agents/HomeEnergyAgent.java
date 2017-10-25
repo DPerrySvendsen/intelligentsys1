@@ -244,6 +244,7 @@ public class HomeEnergyAgent extends Agent {
 	
 	public int getCurrentHour() {
 		Calendar cal = new GregorianCalendar();
+		cal.setTimeZone(TimeZone.getTimeZone("GMT"));
 		cal.setTime(getSimulatedDate());
 		return cal.get(Calendar.HOUR_OF_DAY);
 	}

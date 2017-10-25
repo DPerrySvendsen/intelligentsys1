@@ -11,21 +11,40 @@
   */
   
   Table input;
-  String[] typeList;
+  public String[] typeList;
   
-  Table[] applianceData;
+  public Table[] applianceData;
   
-  Table traderUsage;
-  Table traderPurchases;
-  Table retailerOffers;
+  public Table traderUsage;
+  public Table traderPurchases;
+  public Table retailerOffers;
+  
+  private ApplianceDataSet applianceDataSet;
+  private RetailerOfferSet retailerOfferSet;
+  private TraderPurchaseSet traderPurchaseSet;
+  private TraderUsageSet traderUsageSet;
+  
+  
+  Button applianceDataButton, traderPurchaseButton, retailerOfferButton, traderUsageButton;
   
   
   void setup(){
     // initialise parameters for display
-    //fullScreen();
-    pixelDensity(displayDensity());
+    fullScreen();
+    pixelDensity(1);
+    background(0);
     
     typeList = new String[] {"Toaster", "AirCon", "Fridge", "Microwave", "CoffeeMachine", "Lamp", "PhoneCharger", "WashingMachine", "Dryer", "TV", "SolarPanel"};
+    
+    applianceDataButton = new Button(displayWidth * 0.2, displayHeight * 0.9, "APPLIANCE DATA");
+    traderPurchaseButton = new Button(displayWidth * 0.4, displayHeight * 0.9, "TRADER PURCHASES");
+    retailerOfferButton = new Button(displayWidth * 0.6, displayHeight * 0.9, "RETAILER OFFERS");
+    traderUsageButton = new Button(displayWidth * 0.8, displayHeight * 0.9, "TRADER USAGE");
+    
+    applianceDataSet = new ApplianceDataSet();
+    retailerOfferSet = new RetailerOfferSet();
+    traderPurchaseSet = new TraderPurchaseSet();
+    traderUsageSet = new TraderUsageSet();
     
     input = loadTable("output.csv", "csv");
     println(input.getRowCount() + " total rows in table"); 
@@ -184,5 +203,21 @@
   }
   
   void draw(){
+    background(0);
+    if (mousePressed){
+      applianceDataButton.checkButton();
+      retailerOfferButton.checkButton();
+      traderPurchaseButton.checkButton();
+      traderUsageButton.checkButton();
+    }
     
+    applianceDataSet.display();
+    retailerOfferSet.display();
+    traderPurchaseSet.display();
+    traderUsageSet.display();
+   
+    applianceDataButton.display();
+    retailerOfferButton.display();
+    traderPurchaseButton.display();
+    traderUsageButton.display();
   }
