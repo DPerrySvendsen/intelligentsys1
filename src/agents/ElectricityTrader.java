@@ -17,31 +17,26 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	private int unitApplianceRequest;
 	private int unitsRequired;
 	
-	private double totalCostSpent;
 	private double maxBuyPrice;
 	private boolean isRequestSent;
-	
-	/* Used as a test */
-	private boolean negotateOffers;
 	
 	protected void setup () {
 		super.setup();
 		
 		addBehaviour(new CyclicBehaviour(this) {
-			public void action() {
+			public void action () {
 				checkOffers();
 			}
 		});
 		
 		//Timed behaviour at each second
 		addBehaviour(new TickerBehaviour(this, 1000) {
-			protected void onTick() {
+			protected void onTick () {
 				consumeUnits();
 				updateRate();
 			}
 		});
 		
-		totalCostSpent = 0;
 		unitStock = 200;
 		// unitUsageRate now dynamically updated by appliances
 		unitUsageRate = 0;
@@ -53,12 +48,10 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		
 		log(unitStock + " starting units. Usage rate at: " + unitUsageRate + " units.");
 		log(unitsRequired + " units required. Maximum buy price: " + formatAsPrice(maxBuyPrice));
-		
-		//consumeUnits();
 	}
 	
 	private void requestOffers () {
-		//Find all other agents
+		// Find all other agents
 		otherAgents.clear();
 		for (String name : findOtherAgents()) {
 			otherAgents.add(name);
@@ -86,9 +79,6 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				// Trader has received consumption data from an Appliance, should this be in checkOffers?
 				int newConsumption = Integer.parseInt(message.getContent());
 				unitUsageRate += newConsumption;
-				
-				// log for debugging
-				// log("received consumption data from " + message.getSender().getLocalName());
 				break;
 			case ACLMessage.FAILURE:
 				// Agent could not provide an offer, remove the agent from the list of other agents
@@ -150,7 +140,6 @@ public class ElectricityTrader extends HomeEnergyAgent {
 			sendMessage("" + unitsToBuy, ACLMessage.AGREE, bestOffer.getName());
 			log("Accepted best offer from " + bestOffer.getName() + ". Purchased " + unitsToBuy +  
 				" units for " + formatAsPrice(unitsToBuy * bestOffer.getPricePerUnit()));
-			totalCostSpent += unitsToBuy * bestOffer.getPricePerUnit();
 			unitsRequired -= unitsToBuy;
 			unitStock += unitsToBuy;
 		}
@@ -167,21 +156,21 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		}
 	}
 
-	//Called onTick by the TickerBehaviour
+	// Called onTick by the TickerBehaviour
 	private void consumeUnits () {
 		int unitsLost = unitUsageRate;
 		
-		unitStock -= unitsLost;
+		unitStock     -= unitsLost;
 		unitsRequired += unitsLost;
 		log("Consumed " + unitsLost + " units. " + unitStock + " remaining.");
 		
-		//Request an offer when units are running low, deny if a request has already been made
-		if(unitStock < unitsRequired && !isRequestSent) {
+		// Request an offer when units are running low, deny if a request has already been made
+		if (unitStock < unitsRequired && !isRequestSent) {
 			requestOffers();
 		}
 	}
 	
-	//Hook to update usage rate when appliances are turned on
+	// Hook to update usage rate when appliances are turned on
 	private void updateRate() {
 		unitUsageRate = unitApplianceRequest;
 		unitApplianceRequest = 0;

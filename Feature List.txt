@@ -1,25 +1,22 @@
 In Progress
 ---
-	| Traders should stop querying Appliances (ie just every other agent) for 
-offers somehow
-	| Trader sells electricity back to retailer (if there's extra power units to 
-dispose of due to solar generation)
-	| Software Documentation and Report.
+
+Dane    | Traders should stop querying Appliances (ie just every other agent) for offers somehow
+Dane    | Software Documentation and Report
 Morgan  | User interface with Processing
-Morgan	| Identificaion of Appliances.
-Dane    | Read in settings from config file/s
 Thomas  | Mechanism for Trader to decide which offer to accept, if any
 Thomas  | Mechanism to allow for offers and counter-offers between agents (with timeout?)
-	| Fix issue with time and date not matching.
          
 Finished
 ---
 
 Thomas  | Mechanism for Retailers to decide how many units to offer and for what price
-Morgan	| Solar Panel Generation.
+Morgan	| Solar Panel Generation
 Morgan  | Mechanism for Trader to lose power units (individual 'appliances'?)
 Morgan  | Implement Appliance class
 Morgan  | Messaging between Trader and Appliances
+Morgan  | Fix issue with time and date not matching
+Morgan	| Identificaion of Appliances
 Dane    | Messaging and logging framework
 Dane    | Messages with appropriate performatives (open to changes)
 Dane    | Mechanism for Trader to gain power units
@@ -28,6 +25,6 @@ Dane    | Proof-of-concept trading behaviour
 Dane    | Real-time output messages to .csv
 Anthony | Mechanism for Retailer to gain power units (a little sophistication)
 Anthony | Mechanism to allow retailers to specialise in different trading methods.
-Anthony | Refine trading prices to a 'realistic' value.
+Anthony | Refine trading prices to a 'realistic' value
 Anthony | Map system time to day/night cycle
 Anthony | Mechanism for Trader to decide when to query Retailers for offers

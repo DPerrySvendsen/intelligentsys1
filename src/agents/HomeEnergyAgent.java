@@ -96,8 +96,8 @@ public class HomeEnergyAgent extends Agent {
 			message
 		});
 		String output = 
-			getFormattedSystemTime() + " " + 
-			getFormattedSimulatedTime() + " " +
+			getFormattedSystemTime()     + " " + 
+			getFormattedSimulatedTime()  + " " +
 			padRight(getLocalName(), 22) + " " + 
 			message;
 		System.out.println(output);
@@ -237,16 +237,20 @@ public class HomeEnergyAgent extends Agent {
 	    return new Date((System.currentTimeMillis() - startupTime) * 60 * timeScale);
 	}
 	
+	public Double getSimulatedHalfHour () {
+		Calendar calendar = new GregorianCalendar();
+		calendar.setTimeZone(TimeZone.getTimeZone("GMT"));
+		calendar.setTime(getSimulatedDate());
+		return calendar.get(Calendar.HOUR_OF_DAY) + ((calendar.get(Calendar.MINUTE) > 30) ? 0.5 : 0);
+	}
+	
+	public int getSimulatedHour () {
+		return (int) Math.floor(getSimulatedHalfHour());
+	}
+	
 	// Returns the formatted simulated time
 	private String getFormattedSimulatedTime() {
 		return DATE_FORMAT_SIMULATED.format(getSimulatedDate());
-	}
-	
-	public int getCurrentHour() {
-		Calendar cal = new GregorianCalendar();
-		cal.setTimeZone(TimeZone.getTimeZone("GMT"));
-		cal.setTime(getSimulatedDate());
-		return cal.get(Calendar.HOUR_OF_DAY);
 	}
 	
 	public long getTimeScale() {
