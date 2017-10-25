@@ -8,9 +8,9 @@ import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class ElectricityTrader extends HomeEnergyAgent {
-	
-	private ArrayList<String> otherAgents = new ArrayList<String>();
+	private ArrayList<String> retailerAgents          = new ArrayList<String>();
 	private HashMap<String, TradeOffer> offers = new HashMap<String, TradeOffer>();
+	private int pendingResponses;
 	
 	private int unitStock;
 	private int unitUsageRate;
@@ -23,19 +23,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 	protected void setup () {
 		super.setup();
 		
-		addBehaviour(new CyclicBehaviour(this) {
-			public void action () {
-				checkOffers();
-			}
-		});
-		
-		//Timed behaviour at each second
-		addBehaviour(new TickerBehaviour(this, 1000) {
-			protected void onTick () {
-				consumeUnits();
-				updateRate();
-			}
-		});
+		identifyRetailers();
 		
 		unitStock = 200;
 		// unitUsageRate now dynamically updated by appliances
@@ -48,20 +36,44 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		
 		log(unitStock + " starting units. Usage rate at: " + unitUsageRate + " units.");
 		log(unitsRequired + " units required. Maximum buy price: " + formatAsPrice(maxBuyPrice));
+		
+		addBehaviour(new CyclicBehaviour(this) {
+			public void action () {
+				checkMessages();
+			}
+		});
+	}
+	
+	private void initialiseTradingBehaviour () {
+		//Timed behaviour at each second
+		addBehaviour(new TickerBehaviour(this, 1000) {
+			protected void onTick () {
+				consumeUnits();
+				updateRate();
+			}
+		});
+		
+	}
+
+	private void identifyRetailers () {
+		String[] otherAgents = findOtherAgents();
+		pendingResponses = otherAgents.length;
+		for (String name : otherAgents) {
+			sendMessage("Are you a retailer?", ACLMessage.QUERY_IF, name);
+		}
 	}
 	
 	private void requestOffers () {
 		// Find all other agents
-		otherAgents.clear();
-		for (String name : findOtherAgents()) {
-			otherAgents.add(name);
+		pendingResponses = retailerAgents.size();
+		for (String name : retailerAgents) {
 			log("Requesting offer from " + name + "...");
 			sendMessage("", ACLMessage.REQUEST, name);
 			isRequestSent = true;
 		}
 	}
 	
-	private void checkOffers () {
+	private void checkMessages () {
 		// Did the agent receive a message?
 		ACLMessage message = receiveMessage();
 		if (message == null) {
@@ -76,6 +88,21 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				}
 				break;
 			case ACLMessage.INFORM:
+				if (message.getContent().contains("retailer")) {
+					pendingResponses--;
+					if (message.getContent().contains("Yes")) {
+						// Add this agent to the list of retailers
+						String name = message.getSender().getLocalName();
+						log("Identified " + name + " as a retailer.");
+						retailerAgents.add(name);
+					}
+					if (pendingResponses == 0) {
+						// We've identified all the other agents, launch the trading behaviour
+						log("All other agents have been identified.");
+						initialiseTradingBehaviour();
+					}
+					return;
+				}
 				// Trader has received consumption data from an Appliance, should this be in checkOffers?
 				int newConsumption = Integer.parseInt(message.getContent());
 				unitUsageRate += newConsumption;
@@ -86,10 +113,10 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				if(!name.contains("Appliance")){
 					log("No offer from " + name);
 				}
-				otherAgents.remove(name);
+				pendingResponses--;
 		};
 		// Has an offer been received from all other agents?
-		if (offers.size() == otherAgents.size()) {
+		if (pendingResponses == 0) {
 			processOffers();
 			offers.clear();
 		}

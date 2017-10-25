@@ -166,6 +166,11 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 			case ACLMessage.REFUSE:
 				// For now, do nothing
 				break;		
+				
+			case ACLMessage.QUERY_IF:
+				sendReply("Yes, I am a retailer", ACLMessage.INFORM, message);
+				break;
+				
 		}
 	}
 	

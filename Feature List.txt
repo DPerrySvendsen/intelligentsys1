@@ -1,7 +1,6 @@
 In Progress
 ---
 
-Dane    | Traders should stop querying Appliances (ie just every other agent) for offers somehow
 Dane    | Software Documentation and Report
 Morgan  | User interface with Processing
 Thomas  | Mechanism for Trader to decide which offer to accept, if any
@@ -23,6 +22,7 @@ Dane    | Mechanism for Trader to gain power units
 Dane    | Mechanism for Retailer to lose power units
 Dane    | Proof-of-concept trading behaviour
 Dane    | Real-time output messages to .csv
+Dane    | Traders should stop querying Appliances (ie just every other agent) for offers somehow
 Anthony | Mechanism for Retailer to gain power units (a little sophistication)
 Anthony | Mechanism to allow retailers to specialise in different trading methods.
 Anthony | Refine trading prices to a 'realistic' value

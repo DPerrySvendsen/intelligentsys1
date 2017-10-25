@@ -71,20 +71,9 @@ public class Appliance extends HomeEnergyAgent {
 
 	private void processMessage (ACLMessage message) {
 		switch (message.getPerformative()) {
-		// If it gets a request it automatically refuses
-		// If we were to implement battery storage appliance we would have to change this 
-		case ACLMessage.REQUEST:
-			sendReply("", ACLMessage.FAILURE, message);
-			log("I am " + typeList[applianceType] + ", I can't provide an offer to " + message.getSender().getLocalName() + ".");
-			break;
-
-		case ACLMessage.AGREE:
-			// Do nothing
-			break;
-
-		case ACLMessage.REFUSE:
-			// For now, do nothing
-			break;
+			case ACLMessage.QUERY_IF:
+				sendReply("No, I am not a retailer", ACLMessage.INFORM, message);
+				break;
 		}
 	}
 
