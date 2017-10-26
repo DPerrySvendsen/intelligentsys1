@@ -1,19 +1,59 @@
 class ApplianceDataSet {
   int size;
+  Table[] dataSet;
+  boolean isDisplayed;
+  int appToDisplay;
+  Graph[] graphMatrix;
   
   ApplianceDataSet(){
-    
-  }
-  
-  void display(){
-    if (applianceDataButton.overButton){
-    fill(200);
-    ellipseMode(CENTER);
-    ellipse(displayWidth/2, displayHeight/2, 400, 400);
-    fill(0);
-    textAlign(CENTER, CENTER);
-    text("APPLIANCE DATA GOES HERE", displayWidth/2, displayHeight/2);
+    dataSet = new Table[typeList.length];
+    graphMatrix = new Graph[typeList.length];
+    for(int i = 0;  i < typeList.length; i++) {
+      String title = typeList[i];
+      graphMatrix[i] = new Graph();
+      graphMatrix[i].setTitle(title);
     }
   }
   
+  void display() {
+    if (isDisplayed){
+      graphMatrix[appToDisplay].display(displayWidth * 0.3);
+    }
+  }
+  
+  void loadData(Table[] input){
+    dataSet = input;
+    for(int i = 0; i < typeList.length; i++) {
+      float largestCons = 0;
+      Table thisTable = dataSet[i];
+      for (TableRow row : thisTable.rows()){
+        if (row.getInt("simDay") == 1){
+          float id = 0;
+          float cons = row.getFloat("powerUsage");
+          String simTime = row.getString("simTime");
+          String[] time = splitTokens(simTime, ": A P");
+          // carry if time is PM
+          float carry = 0;
+          if (simTime.contains("P")) {
+            carry = 12;
+          }
+          float convTime = float(time[0]) + float(time[1]) / 60 + carry;
+          graphMatrix[i].addPoint(convTime, cons, id);
+          if (cons > largestCons) {
+            largestCons = cons;
+          }
+        }
+      }
+      graphMatrix[i].setYScale(largestCons);
+    }
+    
+  }
+  
+  void setDisplayed(boolean input) {
+    isDisplayed = input;
+  }
+  
+  void setAppToDisplay(int input) {
+    appToDisplay = input;
+  }
 }

@@ -1,4 +1,7 @@
   /*
+  Data visualiser running on Processing
+  available from https://processing.org/download/
+  
   Reads in data from csv file 
   - Appliance agents power usage
   - Trader agent power remaining and consumed
@@ -19,13 +22,12 @@
   public Table traderPurchases;
   public Table retailerOffers;
   
-  private ApplianceDataSet applianceDataSet;
-  private RetailerOfferSet retailerOfferSet;
-  private TraderPurchaseSet traderPurchaseSet;
-  private TraderUsageSet traderUsageSet;
+  public ApplianceDataSet applianceDataSet;
+  public RetailerOfferSet retailerOfferSet;
+  public TraderPurchaseSet traderPurchaseSet;
+  public TraderUsageSet traderUsageSet;
   
-  
-  Button applianceDataButton, traderPurchaseButton, retailerOfferButton, traderUsageButton;
+  private ButtonSet buttonSet;
   
   
   void setup(){
@@ -36,15 +38,13 @@
     
     typeList = new String[] {"Toaster", "AirCon", "Fridge", "Microwave", "CoffeeMachine", "Lamp", "PhoneCharger", "WashingMachine", "Dryer", "TV", "SolarPanel"};
     
-    applianceDataButton = new Button(displayWidth * 0.2, displayHeight * 0.9, "APPLIANCE DATA");
-    traderPurchaseButton = new Button(displayWidth * 0.4, displayHeight * 0.9, "TRADER PURCHASES");
-    retailerOfferButton = new Button(displayWidth * 0.6, displayHeight * 0.9, "RETAILER OFFERS");
-    traderUsageButton = new Button(displayWidth * 0.8, displayHeight * 0.9, "TRADER USAGE");
     
     applianceDataSet = new ApplianceDataSet();
     retailerOfferSet = new RetailerOfferSet();
     traderPurchaseSet = new TraderPurchaseSet();
     traderUsageSet = new TraderUsageSet();
+    
+    buttonSet = new ButtonSet();
     
     input = loadTable("output.csv", "csv");
     println(input.getRowCount() + " total rows in table"); 
@@ -54,6 +54,7 @@
     
     for(int i = 0; i < typeList.length; i++){
       applianceData[i] = new Table();
+      applianceData[i].addColumn("simDay");
       applianceData[i].addColumn("simTime");
       applianceData[i].addColumn("powerUsage");
     }
@@ -68,8 +69,11 @@
         
         if(sender.contains(typeList[i]) && message.contains("INFORM")){
           String[] values = split(message, "[INFORM] ");
+          String[] day1 = split(simTime, "ay ");
+          String[] day2 = split(day1[1], " ");
           TableRow newRow = applianceData[i].addRow();
-          newRow.setString("simTime", simTime);
+          newRow.setInt("simDay", int(day2[0]));
+          newRow.setString("simTime", day2[1]);
           newRow.setInt("powerUsage", int(values[1]));
         }
       }
@@ -78,6 +82,7 @@
     // parse input for retailer offers and store in table
     Table retailerOffers = new Table();
     retailerOffers.addColumn("retailer");
+    retailerOffers.addColumn("simDay");
     retailerOffers.addColumn("simTime");
     retailerOffers.addColumn("quantity");
     retailerOffers.addColumn("price");
@@ -96,10 +101,13 @@
         String[] toPrice1 = split(message, '$');
         String[] toPrice2 = split(toPrice1[1], ' ');
         float price = float(toPrice2[0]);
+        String[] day1 = split(simTime, "ay ");
+        String[] day2 = split(day1[1], " ");
         
         TableRow newRow = retailerOffers.addRow();
         newRow.setString("retailer", sender);
-        newRow.setString("simTime", simTime);
+        newRow.setInt("simDay", int(day2[0])); 
+        newRow.setString("simTime", day2[1]);
         newRow.setInt("quantity", quantity);
         newRow.setFloat("price", price);
       }
@@ -108,6 +116,7 @@
     // parse input for trader usage and remaining and store in table
     
     Table traderUsage = new Table();
+    traderUsage.addColumn("simDay");
     traderUsage.addColumn("simTime");
     traderUsage.addColumn("remaining");
     traderUsage.addColumn("usage");
@@ -126,9 +135,12 @@
         String[] toRemaining1 = split(message, "units. ");
         String[] toRemaining2 = split(toRemaining1[1], ' ');
         int remaining = int(toRemaining2[0]);
+        String[] day1 = split(simTime, "ay ");
+        String[] day2 = split(day1[1], " ");
         
         TableRow newRow = traderUsage.addRow();
-        newRow.setString("simTime", simTime);
+        newRow.setInt("simDay", int(day2[0]));
+        newRow.setString("simTime", day2[1]);
         newRow.setInt("usage", consumed);
         newRow.setFloat("remaining", remaining);
       }
@@ -137,6 +149,7 @@
     
     // parse input for trader purchases and store in table
     Table traderPurchases = new Table();
+    traderPurchases.addColumn("simDay");
     traderPurchases.addColumn("simTime");
     traderPurchases.addColumn("quantity");
     traderPurchases.addColumn("price");
@@ -158,9 +171,12 @@
         String[] toRetailer1 = split(message, "from ");
         String[] toRetailer2 = split(toRetailer1[1], ".");
         String retailer = toRetailer2[0];
+        String[] day1 = split(simTime, "ay ");
+        String[] day2 = split(day1[1], " ");
         
         TableRow newRow = traderPurchases.addRow();
-        newRow.setString("simTime", simTime);
+        newRow.setInt("simDay", int(day2[0]));
+        newRow.setString("simTime", day2[1]);
         newRow.setInt("quantity", quantity);
         newRow.setFloat("price", price);
         newRow.setString("retailer", retailer);
@@ -168,56 +184,23 @@
     
     }
     
+    // pass data tables to objects
+    applianceDataSet.loadData(applianceData);
+    traderUsageSet.loadData(traderUsage);
+    retailerOfferSet.loadData(retailerOffers);
+    traderPurchaseSet.loadData(traderPurchases);
     
-    // Print out data from tables to check it's been stored correctly
-    for (int i = 0; i < typeList.length; i++){
-      for (TableRow row : applianceData[i].rows()){
-        int usage = row.getInt("powerUsage");
-        String simTime = row.getString("simTime");
-        println(typeList[i] + " used " + usage + "  units at " + simTime);
-      }
-    }
-    
-    for (TableRow row : traderPurchases.rows()){
-      String simTime = row.getString("simTime");
-      int quantity = row.getInt("quantity");
-      float price = row.getFloat("price");
-      String retailer = row.getString("retailer");
-      println("At " + simTime + " the trader purchased " + quantity + " units for $" + price + ", from " + retailer + " at $" + price/quantity + " per unit");
-    }
-    
-    for (TableRow row : retailerOffers.rows()){
-      String simTime = row.getString("simTime");
-      int quantity = row.getInt("quantity");
-      float price = row.getFloat("price");
-      String retailer = row.getString("retailer");
-      println("At " + simTime + " " + retailer + " offered " + quantity + " units for $" + price + ",  at $" + price/quantity + " per unit");
-    }
-    
-    for (TableRow row : traderUsage.rows()){
-      String simTime = row.getString("simTime");
-      int remaining = row.getInt("remaining");
-      int usage = row.getInt("usage");
-      println("At " + simTime + " the Trader used " + usage + " units and had " + remaining + " units remaining");
-    }
   }
   
   void draw(){
     background(0);
     if (mousePressed){
-      applianceDataButton.checkButton();
-      retailerOfferButton.checkButton();
-      traderPurchaseButton.checkButton();
-      traderUsageButton.checkButton();
+      buttonSet.checkButtons();
     }
     
+    buttonSet.display();
     applianceDataSet.display();
     retailerOfferSet.display();
     traderPurchaseSet.display();
     traderUsageSet.display();
-   
-    applianceDataButton.display();
-    retailerOfferButton.display();
-    traderPurchaseButton.display();
-    traderUsageButton.display();
   }
