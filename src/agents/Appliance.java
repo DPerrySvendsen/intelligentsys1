@@ -40,7 +40,7 @@ public class Appliance extends HomeEnergyAgent {
 
 		// Assign appliance to correct behaviour
 		for (int id = 0; id < typeList.length; id++) {
-			if (getLocalName() == typeList[id]) {
+			if (getLocalName().equals(typeList[id])) {
 				applianceType = id;
 				break;
 			}
