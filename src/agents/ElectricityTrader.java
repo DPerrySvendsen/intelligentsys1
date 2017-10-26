@@ -86,6 +86,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 				if (offer != null) {
 					offers.put(message.getSender().getLocalName(), offer);
 				}
+				pendingResponses--;
 				break;
 			case ACLMessage.INFORM:
 				if (message.getContent().contains("retailer")) {
