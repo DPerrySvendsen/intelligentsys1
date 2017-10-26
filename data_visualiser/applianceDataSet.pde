@@ -30,14 +30,18 @@ class ApplianceDataSet {
         if (row.getInt("simDay") == 1){
           float id = 0;
           float cons = row.getFloat("powerUsage");
+          if(cons < 0) {
+            cons = - cons;
+            id = 1;
+          }
           String simTime = row.getString("simTime");
           String[] time = splitTokens(simTime, ": A P");
           // carry if time is PM
           float carry = 0;
-          if (simTime.contains("P")) {
+          if (simTime.contains("P") && (int(time[0]) != 12)) {
             carry = 12;
           }
-          float convTime = float(time[0]) + float(time[1]) / 60 + carry;
+          float convTime = float(time[0]) + (float(time[1]) / 60) + carry;
           graphMatrix[i].addPoint(convTime, cons, id);
           if (cons > largestCons) {
             largestCons = cons;
