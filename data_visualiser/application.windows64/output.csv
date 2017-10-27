@@ -1,0 +1,1822 @@
+01:34:10PM,Day 01 12:00AM,ElectricityRetailer3,300.0 units held. Sell price range: $1.00 - $1.00
+01:34:10PM,Day 01 12:00AM,ElectricityRetailer2,300.0 units held. Sell price range: $0.02 - $0.12
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> ElectricityRetailer3   [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> Lamp                   [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityRetailer3,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> Dryer                  [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityRetailer3,-> ElectricityTrader1     [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:01AM,Lamp,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> ElectricityRetailer1   [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,Lamp,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> WashingMachine         [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityRetailer1,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,Dryer,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> CoffeeMachine          [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,WashingMachine,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityRetailer1,-> ElectricityTrader1     [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:01AM,Dryer,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> AirCon                 [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,WashingMachine,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:01AM,CoffeeMachine,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> PhoneCharger           [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> Fridge                 [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,AirCon,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,PhoneCharger,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:01AM,ElectricityTrader1,-> ElectricityRetailer2   [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,AirCon,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,PhoneCharger,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,-> Microwave              [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,ElectricityRetailer2,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,-> Toaster                [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,Microwave,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,Fridge,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,ElectricityRetailer2,-> ElectricityTrader1     [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,-> TV                     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,Fridge,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,Microwave,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,-> SolarPanel             [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,TV,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,Toaster,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,200 starting units. Usage rate at: 0 units.
+01:34:10PM,Day 01 12:02AM,TV,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,Toaster,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,SolarPanel,<- ElectricityTrader1     [QUERY-IF] Are you a retailer?
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,100 units required. Maximum buy price: $0.30
+01:34:10PM,Day 01 12:02AM,SolarPanel,-> ElectricityTrader1     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- ElectricityRetailer3   [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,Identified ElectricityRetailer3 as a retailer.
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- Lamp                   [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- ElectricityRetailer1   [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,Identified ElectricityRetailer1 as a retailer.
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- Dryer                  [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- WashingMachine         [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- PhoneCharger           [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- AirCon                 [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- Fridge                 [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- ElectricityRetailer2   [INFORM] Yes I am a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,Identified ElectricityRetailer2 as a retailer.
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- Microwave              [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- TV                     [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- Toaster                [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,<- SolarPanel             [INFORM] No I am not a retailer
+01:34:10PM,Day 01 12:02AM,ElectricityTrader1,All other agents have been identified.
+01:34:11PM,Day 01 12:30AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:11PM,Day 01 12:30AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:11PM,Day 01 12:30AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:11PM,Day 01 12:30AM,ElectricityTrader1,Got all offers:
+01:34:11PM,Day 01 12:31AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:11PM,Day 01 12:31AM,ElectricityTrader1,Got all offers:
+01:34:11PM,Day 01 12:32AM,ElectricityTrader1,Consumed 3 units. 197 remaining.
+01:34:12PM,Day 01 01:00AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:12PM,Day 01 01:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:12PM,Day 01 01:01AM,ElectricityTrader1,Got all offers:
+01:34:12PM,Day 01 01:01AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:12PM,Day 01 01:01AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:12PM,Day 01 01:01AM,ElectricityTrader1,Got all offers:
+01:34:12PM,Day 01 01:02AM,ElectricityTrader1,Consumed 3 units. 194 remaining.
+01:34:13PM,Day 01 01:31AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:13PM,Day 01 01:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:13PM,Day 01 01:31AM,ElectricityTrader1,Got all offers:
+01:34:13PM,Day 01 01:32AM,ElectricityTrader1,Consumed 1 units. 193 remaining.
+01:34:14PM,Day 01 02:01AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:14PM,Day 01 02:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:14PM,Day 01 02:01AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:14PM,Day 01 02:01AM,ElectricityTrader1,Got all offers:
+01:34:14PM,Day 01 02:01AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:14PM,Day 01 02:01AM,ElectricityTrader1,Got all offers:
+01:34:14PM,Day 01 02:02AM,ElectricityTrader1,Consumed 3 units. 190 remaining.
+01:34:15PM,Day 01 02:30AM,ElectricityRetailer3,Produced 10.0 units. 310.0 units in hold.
+01:34:15PM,Day 01 02:30AM,ElectricityRetailer1,Produced 10.0 units. 310.0 units in hold.
+01:34:15PM,Day 01 02:30AM,ElectricityRetailer2,Produced 10.0 units. 310.0 units in hold.
+01:34:15PM,Day 01 02:31AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:15PM,Day 01 02:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:15PM,Day 01 02:31AM,ElectricityTrader1,Got all offers:
+01:34:15PM,Day 01 02:32AM,ElectricityTrader1,Consumed 1 units. 189 remaining.
+01:34:16PM,Day 01 03:01AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:16PM,Day 01 03:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:16PM,Day 01 03:01AM,ElectricityTrader1,Got all offers:
+01:34:16PM,Day 01 03:01AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:16PM,Day 01 03:01AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:16PM,Day 01 03:01AM,ElectricityTrader1,Got all offers:
+01:34:16PM,Day 01 03:02AM,ElectricityTrader1,Consumed 3 units. 186 remaining.
+01:34:17PM,Day 01 03:33AM,ElectricityTrader1,Consumed 0 units. 186 remaining.
+01:34:18PM,Day 01 04:01AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:18PM,Day 01 04:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:18PM,Day 01 04:01AM,ElectricityTrader1,Got all offers:
+01:34:18PM,Day 01 04:03AM,ElectricityTrader1,Consumed 1 units. 185 remaining.
+01:34:19PM,Day 01 04:31AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:19PM,Day 01 04:31AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:19PM,Day 01 04:31AM,ElectricityTrader1,Got all offers:
+01:34:19PM,Day 01 04:33AM,ElectricityTrader1,Consumed 1 units. 184 remaining.
+01:34:20PM,Day 01 05:00AM,ElectricityRetailer3,Produced 10.0 units. 320.0 units in hold.
+01:34:20PM,Day 01 05:00AM,ElectricityRetailer1,Produced 10.0 units. 320.0 units in hold.
+01:34:20PM,Day 01 05:01AM,ElectricityRetailer2,Produced 10.0 units. 320.0 units in hold.
+01:34:20PM,Day 01 05:01AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:20PM,Day 01 05:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:20PM,Day 01 05:04AM,ElectricityTrader1,Got all offers:
+01:34:20PM,Day 01 05:04AM,ElectricityTrader1,Consumed 1 units. 183 remaining.
+01:34:21PM,Day 01 05:34AM,ElectricityTrader1,Consumed 0 units. 183 remaining.
+01:34:22PM,Day 01 06:01AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:22PM,Day 01 06:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:22PM,Day 01 06:01AM,ElectricityTrader1,Got all offers:
+01:34:22PM,Day 01 06:04AM,ElectricityTrader1,Consumed 1 units. 182 remaining.
+01:34:23PM,Day 01 06:31AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:23PM,Day 01 06:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:23PM,Day 01 06:31AM,ElectricityTrader1,Got all offers:
+01:34:23PM,Day 01 06:34AM,ElectricityTrader1,Consumed 2 units. 180 remaining.
+01:34:24PM,Day 01 07:01AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,Got all offers:
+01:34:24PM,Day 01 07:01AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,Got all offers:
+01:34:24PM,Day 01 07:01AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:24PM,Day 01 07:01AM,ElectricityTrader1,Got all offers:
+01:34:24PM,Day 01 07:04AM,ElectricityTrader1,Consumed 13 units. 167 remaining.
+01:34:25PM,Day 01 07:30AM,ElectricityRetailer3,Produced 35.0 units. 355.0 units in hold.
+01:34:25PM,Day 01 07:31AM,ElectricityRetailer1,Produced 35.0 units. 355.0 units in hold.
+01:34:25PM,Day 01 07:31AM,ElectricityRetailer2,Produced 35.0 units. 355.0 units in hold.
+01:34:25PM,Day 01 07:31AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,Got all offers:
+01:34:25PM,Day 01 07:31AM,Microwave,-> ElectricityTrader1     [INFORM] 5
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,<- Microwave              [INFORM] 5
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,Got all offers:
+01:34:25PM,Day 01 07:31AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,Got all offers:
+01:34:25PM,Day 01 07:31AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:34:25PM,Day 01 07:31AM,ElectricityTrader1,Got all offers:
+01:34:25PM,Day 01 07:34AM,ElectricityTrader1,Consumed 16 units. 151 remaining.
+01:34:26PM,Day 01 08:01AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,Got all offers:
+01:34:26PM,Day 01 08:01AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,Got all offers:
+01:34:26PM,Day 01 08:01AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:26PM,Day 01 08:01AM,ElectricityTrader1,Got all offers:
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Consumed 9 units. 142 remaining.
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 189 0.66
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 190 0.20
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 189 units for $0.66 each.
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 189 0.66
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 190 units for $0.20 each.
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 340 0.23
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Received offer from ElectricityRetailer3: 189 units for $0.66 each.
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 340 units for $0.23 each.
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 190 0.20
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Received offer from ElectricityRetailer1: 190 units for $0.20 each.
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 340 0.23
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Received offer from ElectricityRetailer2: 340 units for $0.23 each.
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Got all offers:
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Offer from ElectricityRetailer2: 340 units for  $0.23 per unit. Total price:     $78.20
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Offer from ElectricityRetailer1: 190 units for  $0.20 per unit. Total price:     $38.00
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Offer from ElectricityRetailer3: 189 units for  $0.66 per unit. Total price:    $124.74
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,The best offer is $0.20 per unit from ElectricityRetailer1
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer2   [REFUSE] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Declined offer from ElectricityRetailer2
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer2,<- ElectricityTrader1     [REFUSE] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,-> ElectricityRetailer1   [AGREE] 158
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Accepted best offer from ElectricityRetailer1. Purchased 158 units for $31.60
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer1,<- ElectricityTrader1     [AGREE] 158
+01:34:26PM,Day 01 08:05AM,ElectricityTrader1,Power requirements have been met.
+01:34:26PM,Day 01 08:05AM,ElectricityRetailer1,Sold 158 units to ElectricityTrader1. 197.0 units remaining.
+01:34:27PM,Day 01 08:31AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,Got all offers:
+01:34:27PM,Day 01 08:31AM,Toaster,-> ElectricityTrader1     [INFORM] 1
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,<- Toaster                [INFORM] 1
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,Got all offers:
+01:34:27PM,Day 01 08:31AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:34:27PM,Day 01 08:31AM,ElectricityTrader1,Got all offers:
+01:34:27PM,Day 01 08:35AM,ElectricityTrader1,Consumed 6 units. 294 remaining.
+01:34:28PM,Day 01 09:01AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:28PM,Day 01 09:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:28PM,Day 01 09:01AM,ElectricityTrader1,Got all offers:
+01:34:28PM,Day 01 09:05AM,ElectricityTrader1,Consumed 2 units. 292 remaining.
+01:34:29PM,Day 01 09:31AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:29PM,Day 01 09:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:29PM,Day 01 09:31AM,ElectricityTrader1,Got all offers:
+01:34:29PM,Day 01 09:35AM,ElectricityTrader1,Consumed 2 units. 290 remaining.
+01:34:30PM,Day 01 10:00AM,ElectricityRetailer3,Produced 35.0 units. 390.0 units in hold.
+01:34:30PM,Day 01 10:01AM,ElectricityRetailer1,Produced 35.0 units. 232.0 units in hold.
+01:34:30PM,Day 01 10:01AM,ElectricityRetailer2,Produced 35.0 units. 390.0 units in hold.
+01:34:30PM,Day 01 10:01AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:34:30PM,Day 01 10:01AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:34:30PM,Day 01 10:01AM,ElectricityTrader1,Got all offers:
+01:34:30PM,Day 01 10:01AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:30PM,Day 01 10:01AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:30PM,Day 01 10:01AM,ElectricityTrader1,Got all offers:
+01:34:30PM,Day 01 10:05AM,ElectricityTrader1,Consumed 7 units. 283 remaining.
+01:34:31PM,Day 01 10:31AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,Got all offers:
+01:34:31PM,Day 01 10:31AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,Got all offers:
+01:34:31PM,Day 01 10:31AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:31PM,Day 01 10:31AM,ElectricityTrader1,Got all offers:
+01:34:31PM,Day 01 10:35AM,ElectricityTrader1,Consumed 13 units. 270 remaining.
+01:34:32PM,Day 01 11:01AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:34:32PM,Day 01 11:01AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:34:32PM,Day 01 11:01AM,ElectricityTrader1,Got all offers:
+01:34:32PM,Day 01 11:01AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:34:32PM,Day 01 11:01AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:34:32PM,Day 01 11:01AM,ElectricityTrader1,Got all offers:
+01:34:32PM,Day 01 11:02AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:32PM,Day 01 11:02AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:32PM,Day 01 11:02AM,ElectricityTrader1,Got all offers:
+01:34:32PM,Day 01 11:02AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:34:32PM,Day 01 11:02AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:34:32PM,Day 01 11:02AM,ElectricityTrader1,Got all offers:
+01:34:32PM,Day 01 11:05AM,ElectricityTrader1,Consumed 10 units. 260 remaining.
+01:34:33PM,Day 01 11:32AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:33PM,Day 01 11:32AM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,Got all offers:
+01:34:33PM,Day 01 11:32AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,Got all offers:
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:34:33PM,Day 01 11:32AM,ElectricityTrader1,Got all offers:
+01:34:33PM,Day 01 11:35AM,ElectricityTrader1,Consumed 9 units. 251 remaining.
+01:34:34PM,Day 01 12:01PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:34PM,Day 01 12:01PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:34PM,Day 01 12:01PM,ElectricityTrader1,Got all offers:
+01:34:34PM,Day 01 12:02PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:34PM,Day 01 12:02PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,Got all offers:
+01:34:34PM,Day 01 12:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,Got all offers:
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:34:34PM,Day 01 12:02PM,ElectricityTrader1,Got all offers:
+01:34:34PM,Day 01 12:05PM,ElectricityTrader1,Consumed 19 units. 232 remaining.
+01:34:35PM,Day 01 12:31PM,ElectricityRetailer3,Produced 35.0 units. 425.0 units in hold.
+01:34:35PM,Day 01 12:31PM,ElectricityRetailer1,Produced 35.0 units. 267.0 units in hold.
+01:34:35PM,Day 01 12:31PM,ElectricityRetailer2,Produced 35.0 units. 425.0 units in hold.
+01:34:35PM,Day 01 12:31PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:35PM,Day 01 12:31PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:35PM,Day 01 12:31PM,ElectricityTrader1,Got all offers:
+01:34:35PM,Day 01 12:32PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:35PM,Day 01 12:32PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,Got all offers:
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:35PM,Day 01 12:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,Got all offers:
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:34:35PM,Day 01 12:32PM,ElectricityTrader1,Got all offers:
+01:34:35PM,Day 01 12:35PM,ElectricityTrader1,Consumed 17 units. 215 remaining.
+01:34:36PM,Day 01 01:01PM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 4
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 4
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:01PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:01PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:36PM,Day 01 01:01PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:02PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:36PM,Day 01 01:02PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:34:36PM,Day 01 01:02PM,ElectricityTrader1,Got all offers:
+01:34:36PM,Day 01 01:05PM,ElectricityTrader1,Consumed 29 units. 186 remaining.
+01:34:37PM,Day 01 01:31PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:34:37PM,Day 01 01:31PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:34:37PM,Day 01 01:31PM,ElectricityTrader1,Got all offers:
+01:34:37PM,Day 01 01:31PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:34:37PM,Day 01 01:31PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:34:37PM,Day 01 01:32PM,ElectricityTrader1,Got all offers:
+01:34:37PM,Day 01 01:32PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:37PM,Day 01 01:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:37PM,Day 01 01:32PM,ElectricityTrader1,Got all offers:
+01:34:37PM,Day 01 01:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:34:37PM,Day 01 01:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:34:37PM,Day 01 01:32PM,ElectricityTrader1,Got all offers:
+01:34:37PM,Day 01 01:35PM,ElectricityTrader1,Consumed 15 units. 171 remaining.
+01:34:38PM,Day 01 02:01PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:34:38PM,Day 01 02:01PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:34:38PM,Day 01 02:01PM,ElectricityTrader1,Got all offers:
+01:34:38PM,Day 01 02:02PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,Got all offers:
+01:34:38PM,Day 01 02:02PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,Got all offers:
+01:34:38PM,Day 01 02:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:34:38PM,Day 01 02:02PM,ElectricityTrader1,Got all offers:
+01:34:38PM,Day 01 02:05PM,ElectricityTrader1,Consumed 16 units. 155 remaining.
+01:34:39PM,Day 01 02:32PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,Got all offers:
+01:34:39PM,Day 01 02:32PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:39PM,Day 01 02:32PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,Got all offers:
+01:34:39PM,Day 01 02:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,Got all offers:
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:34:39PM,Day 01 02:32PM,ElectricityTrader1,Got all offers:
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Consumed 16 units. 139 remaining.
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 259 0.59
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 259 units for $0.59 each.
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 69 0.20
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 259 0.59
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 69 units for $0.20 each.
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 259 units for $0.59 each.
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 279 0.05
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 69 0.20
+01:34:39PM,Day 01 02:35PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 279 units for $0.05 each.
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 69 units for $0.20 each.
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 279 0.05
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 279 units for $0.05 each.
+01:34:39PM,Day 01 02:35PM,ElectricityTrader1,Got all offers:
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Offer from ElectricityRetailer2: 279 units for  $0.05 per unit. Total price:     $13.95
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Offer from ElectricityRetailer1:  69 units for  $0.20 per unit. Total price:     $13.80
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Offer from ElectricityRetailer3: 259 units for  $0.59 per unit. Total price:    $152.81
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,The best offer is $0.05 per unit from ElectricityRetailer2
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:34:39PM,Day 01 02:36PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:34:39PM,Day 01 02:36PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 161
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 161 units for $8.05
+01:34:39PM,Day 01 02:36PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 161
+01:34:39PM,Day 01 02:36PM,ElectricityTrader1,Power requirements have been met.
+01:34:39PM,Day 01 02:36PM,ElectricityRetailer2,Sold 161 units to ElectricityTrader1. 264.0 units remaining.
+01:34:40PM,Day 01 03:01PM,ElectricityRetailer3,Produced 35.0 units. 460.0 units in hold.
+01:34:40PM,Day 01 03:01PM,ElectricityRetailer1,Produced 35.0 units. 302.0 units in hold.
+01:34:40PM,Day 01 03:01PM,ElectricityRetailer2,Produced 35.0 units. 299.0 units in hold.
+01:34:40PM,Day 01 03:01PM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:34:40PM,Day 01 03:01PM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:34:40PM,Day 01 03:01PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:01PM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:34:40PM,Day 01 03:01PM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:34:40PM,Day 01 03:01PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:02PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:02PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:02PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:34:40PM,Day 01 03:02PM,ElectricityTrader1,Got all offers:
+01:34:40PM,Day 01 03:05PM,ElectricityTrader1,Consumed 21 units. 279 remaining.
+01:34:41PM,Day 01 03:31PM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:34:41PM,Day 01 03:31PM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:34:41PM,Day 01 03:31PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:32PM,AirCon,-> ElectricityTrader1     [INFORM] 7
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 7
+01:34:41PM,Day 01 03:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:32PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:41PM,Day 01 03:32PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:34:41PM,Day 01 03:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -4
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -4
+01:34:41PM,Day 01 03:32PM,ElectricityTrader1,Got all offers:
+01:34:41PM,Day 01 03:35PM,ElectricityTrader1,Consumed 19 units. 260 remaining.
+01:34:42PM,Day 01 04:01PM,Microwave,-> ElectricityTrader1     [INFORM] 4
+01:34:42PM,Day 01 04:01PM,ElectricityTrader1,<- Microwave              [INFORM] 4
+01:34:42PM,Day 01 04:01PM,ElectricityTrader1,Got all offers:
+01:34:42PM,Day 01 04:02PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:42PM,Day 01 04:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,Got all offers:
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,Got all offers:
+01:34:42PM,Day 01 04:02PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,Got all offers:
+01:34:42PM,Day 01 04:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -4
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -4
+01:34:42PM,Day 01 04:02PM,ElectricityTrader1,Got all offers:
+01:34:42PM,Day 01 04:05PM,ElectricityTrader1,Consumed 13 units. 247 remaining.
+01:34:43PM,Day 01 04:32PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:34:43PM,Day 01 04:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,Got all offers:
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,Got all offers:
+01:34:43PM,Day 01 04:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:34:43PM,Day 01 04:32PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,Got all offers:
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:34:43PM,Day 01 04:32PM,ElectricityTrader1,Got all offers:
+01:34:43PM,Day 01 04:36PM,ElectricityTrader1,Consumed 9 units. 238 remaining.
+01:34:44PM,Day 01 05:02PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:34:44PM,Day 01 05:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,Got all offers:
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,Got all offers:
+01:34:44PM,Day 01 05:02PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:44PM,Day 01 05:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,Got all offers:
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:34:44PM,Day 01 05:02PM,ElectricityTrader1,Got all offers:
+01:34:44PM,Day 01 05:06PM,ElectricityTrader1,Consumed 11 units. 227 remaining.
+01:34:45PM,Day 01 05:31PM,ElectricityRetailer3,Produced 35.0 units. 495.0 units in hold.
+01:34:45PM,Day 01 05:31PM,ElectricityRetailer1,Produced 35.0 units. 337.0 units in hold.
+01:34:45PM,Day 01 05:31PM,ElectricityRetailer2,Produced 35.0 units. 334.0 units in hold.
+01:34:45PM,Day 01 05:32PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:34:45PM,Day 01 05:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,Got all offers:
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,Got all offers:
+01:34:45PM,Day 01 05:32PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,Got all offers:
+01:34:45PM,Day 01 05:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:34:45PM,Day 01 05:32PM,ElectricityTrader1,Got all offers:
+01:34:45PM,Day 01 05:36PM,ElectricityTrader1,Consumed 11 units. 216 remaining.
+01:34:46PM,Day 01 06:02PM,Microwave,-> ElectricityTrader1     [INFORM] 3
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,<- Microwave              [INFORM] 3
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,Got all offers:
+01:34:46PM,Day 01 06:02PM,AirCon,-> ElectricityTrader1     [INFORM] 7
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 7
+01:34:46PM,Day 01 06:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,Got all offers:
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,Got all offers:
+01:34:46PM,Day 01 06:02PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:46PM,Day 01 06:02PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,Got all offers:
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:34:46PM,Day 01 06:02PM,ElectricityTrader1,Got all offers:
+01:34:46PM,Day 01 06:06PM,ElectricityTrader1,Consumed 14 units. 202 remaining.
+01:34:47PM,Day 01 06:32PM,Microwave,-> ElectricityTrader1     [INFORM] 6
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,<- Microwave              [INFORM] 6
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,Got all offers:
+01:34:47PM,Day 01 06:32PM,AirCon,-> ElectricityTrader1     [INFORM] 6
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 6
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,Got all offers:
+01:34:47PM,Day 01 06:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,Got all offers:
+01:34:47PM,Day 01 06:32PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,Got all offers:
+01:34:47PM,Day 01 06:32PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:34:47PM,Day 01 06:32PM,ElectricityTrader1,Got all offers:
+01:34:47PM,Day 01 06:36PM,ElectricityTrader1,Consumed 16 units. 186 remaining.
+01:34:48PM,Day 01 07:02PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,Got all offers:
+01:34:48PM,Day 01 07:02PM,AirCon,-> ElectricityTrader1     [INFORM] 5
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 5
+01:34:48PM,Day 01 07:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,Got all offers:
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,Got all offers:
+01:34:48PM,Day 01 07:02PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:48PM,Day 01 07:02PM,ElectricityTrader1,Got all offers:
+01:34:48PM,Day 01 07:06PM,ElectricityTrader1,Consumed 12 units. 174 remaining.
+01:34:49PM,Day 01 07:32PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,Got all offers:
+01:34:49PM,Day 01 07:32PM,AirCon,-> ElectricityTrader1     [INFORM] 6
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 6
+01:34:49PM,Day 01 07:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,Got all offers:
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,Got all offers:
+01:34:49PM,Day 01 07:32PM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:34:49PM,Day 01 07:32PM,ElectricityTrader1,Got all offers:
+01:34:49PM,Day 01 07:36PM,ElectricityTrader1,Consumed 14 units. 160 remaining.
+01:34:50PM,Day 01 08:01PM,ElectricityRetailer3,Produced 10.0 units. 505.0 units in hold.
+01:34:50PM,Day 01 08:01PM,ElectricityRetailer2,Produced 10.0 units. 344.0 units in hold.
+01:34:50PM,Day 01 08:01PM,ElectricityRetailer1,Produced 10.0 units. 347.0 units in hold.
+01:34:50PM,Day 01 08:02PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,Got all offers:
+01:34:50PM,Day 01 08:02PM,AirCon,-> ElectricityTrader1     [INFORM] 4
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,<- AirCon                 [INFORM] 4
+01:34:50PM,Day 01 08:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,Got all offers:
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,Got all offers:
+01:34:50PM,Day 01 08:02PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:50PM,Day 01 08:02PM,ElectricityTrader1,Got all offers:
+01:34:50PM,Day 01 08:06PM,ElectricityTrader1,Consumed 10 units. 150 remaining.
+01:34:51PM,Day 01 08:32PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:32PM,AirCon,-> ElectricityTrader1     [INFORM] 5
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,<- AirCon                 [INFORM] 5
+01:34:51PM,Day 01 08:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:32PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:51PM,Day 01 08:32PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Consumed 12 units. 138 remaining.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 173 0.52
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 173 units for $0.52 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 51 0.20
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 173 0.52
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 51 units for $0.20 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 173 units for $0.52 each.
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 129 0.15
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 51 0.20
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 129 units for $0.15 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 51 units for $0.20 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 129 0.15
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 129 units for $0.15 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Offer from ElectricityRetailer2: 129 units for  $0.15 per unit. Total price:     $19.35
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Offer from ElectricityRetailer1:  51 units for  $0.20 per unit. Total price:     $10.20
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Offer from ElectricityRetailer3: 173 units for  $0.52 per unit. Total price:     $89.96
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,The best offer is $0.15 per unit from ElectricityRetailer2
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 129
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 129 units for $19.35
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 129
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,33 units still required.
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,Sold 129 units to ElectricityTrader1. 215.0 units remaining.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 122 0.53
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 122 units for $0.53 each.
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 274 0.20
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 122 0.53
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 122 units for $0.53 each.
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 199 0.09
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 274 units for $0.20 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 274 0.20
+01:34:51PM,Day 01 08:36PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 199 units for $0.09 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 274 units for $0.20 each.
+01:34:51PM,Day 01 08:36PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 199 0.09
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 199 units for $0.09 each.
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Got all offers:
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Offer from ElectricityRetailer2: 199 units for  $0.09 per unit. Total price:     $17.91
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Offer from ElectricityRetailer1: 274 units for  $0.20 per unit. Total price:     $54.80
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Offer from ElectricityRetailer3: 122 units for  $0.53 per unit. Total price:     $64.66
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,The best offer is $0.09 per unit from ElectricityRetailer2
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:34:51PM,Day 01 08:37PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:34:51PM,Day 01 08:37PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 33
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 33 units for $2.97
+01:34:51PM,Day 01 08:37PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 33
+01:34:51PM,Day 01 08:37PM,ElectricityTrader1,Power requirements have been met.
+01:34:51PM,Day 01 08:37PM,ElectricityRetailer2,Sold 33 units to ElectricityTrader1. 182.0 units remaining.
+01:34:52PM,Day 01 09:02PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,Got all offers:
+01:34:52PM,Day 01 09:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,Got all offers:
+01:34:52PM,Day 01 09:02PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:52PM,Day 01 09:02PM,ElectricityTrader1,Got all offers:
+01:34:52PM,Day 01 09:06PM,ElectricityTrader1,Consumed 6 units. 294 remaining.
+01:34:53PM,Day 01 09:32PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:53PM,Day 01 09:32PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:53PM,Day 01 09:32PM,ElectricityTrader1,Got all offers:
+01:34:53PM,Day 01 09:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:53PM,Day 01 09:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:53PM,Day 01 09:32PM,ElectricityTrader1,Got all offers:
+01:34:53PM,Day 01 09:36PM,ElectricityTrader1,Consumed 5 units. 289 remaining.
+01:34:54PM,Day 01 10:02PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,Got all offers:
+01:34:54PM,Day 01 10:02PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:54PM,Day 01 10:02PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,Got all offers:
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:54PM,Day 01 10:02PM,ElectricityTrader1,Got all offers:
+01:34:54PM,Day 01 10:03PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:54PM,Day 01 10:03PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:54PM,Day 01 10:03PM,ElectricityTrader1,Got all offers:
+01:34:54PM,Day 01 10:06PM,ElectricityTrader1,Consumed 7 units. 282 remaining.
+01:34:55PM,Day 01 10:31PM,ElectricityRetailer3,Produced 10.0 units. 515.0 units in hold.
+01:34:55PM,Day 01 10:31PM,ElectricityRetailer1,Produced 10.0 units. 357.0 units in hold.
+01:34:55PM,Day 01 10:31PM,ElectricityRetailer2,Produced 10.0 units. 192.0 units in hold.
+01:34:55PM,Day 01 10:32PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:55PM,Day 01 10:32PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:55PM,Day 01 10:32PM,ElectricityTrader1,Got all offers:
+01:34:55PM,Day 01 10:32PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:34:55PM,Day 01 10:32PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:55PM,Day 01 10:32PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:34:55PM,Day 01 10:32PM,ElectricityTrader1,Got all offers:
+01:34:55PM,Day 01 10:33PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:55PM,Day 01 10:33PM,ElectricityTrader1,Got all offers:
+01:34:55PM,Day 01 10:36PM,ElectricityTrader1,Consumed 6 units. 276 remaining.
+01:34:56PM,Day 01 11:02PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:34:56PM,Day 01 11:02PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:34:56PM,Day 01 11:02PM,ElectricityTrader1,Got all offers:
+01:34:56PM,Day 01 11:03PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:56PM,Day 01 11:03PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:56PM,Day 01 11:03PM,ElectricityTrader1,Got all offers:
+01:34:56PM,Day 01 11:03PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:56PM,Day 01 11:03PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:56PM,Day 01 11:03PM,ElectricityTrader1,Got all offers:
+01:34:56PM,Day 01 11:06PM,ElectricityTrader1,Consumed 4 units. 272 remaining.
+01:34:57PM,Day 01 11:33PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:57PM,Day 01 11:33PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:57PM,Day 01 11:33PM,ElectricityTrader1,Got all offers:
+01:34:57PM,Day 01 11:36PM,ElectricityTrader1,Consumed 1 units. 271 remaining.
+01:34:58PM,Day 02 12:03AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:34:58PM,Day 02 12:03AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:34:58PM,Day 02 12:03AM,ElectricityTrader1,Got all offers:
+01:34:58PM,Day 02 12:03AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:34:58PM,Day 02 12:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:34:58PM,Day 02 12:05AM,ElectricityTrader1,Got all offers:
+01:34:58PM,Day 02 12:06AM,ElectricityTrader1,Consumed 3 units. 268 remaining.
+01:34:59PM,Day 02 12:35AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:34:59PM,Day 02 12:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:34:59PM,Day 02 12:35AM,ElectricityTrader1,Got all offers:
+01:34:59PM,Day 02 12:36AM,ElectricityTrader1,Consumed 1 units. 267 remaining.
+01:35:00PM,Day 02 01:01AM,ElectricityRetailer3,Produced 10.0 units. 525.0 units in hold.
+01:35:00PM,Day 02 01:01AM,ElectricityRetailer1,Produced 10.0 units. 367.0 units in hold.
+01:35:00PM,Day 02 01:01AM,ElectricityRetailer2,Produced 10.0 units. 202.0 units in hold.
+01:35:00PM,Day 02 01:03AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:00PM,Day 02 01:03AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:00PM,Day 02 01:03AM,ElectricityTrader1,Got all offers:
+01:35:00PM,Day 02 01:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:00PM,Day 02 01:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:00PM,Day 02 01:05AM,ElectricityTrader1,Got all offers:
+01:35:00PM,Day 02 01:06AM,ElectricityTrader1,Consumed 3 units. 264 remaining.
+01:35:01PM,Day 02 01:35AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:01PM,Day 02 01:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:01PM,Day 02 01:35AM,ElectricityTrader1,Got all offers:
+01:35:01PM,Day 02 01:36AM,ElectricityTrader1,Consumed 1 units. 263 remaining.
+01:35:02PM,Day 02 02:03AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:02PM,Day 02 02:03AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:02PM,Day 02 02:03AM,ElectricityTrader1,Got all offers:
+01:35:02PM,Day 02 02:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:02PM,Day 02 02:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:02PM,Day 02 02:05AM,ElectricityTrader1,Got all offers:
+01:35:02PM,Day 02 02:07AM,ElectricityTrader1,Consumed 3 units. 260 remaining.
+01:35:03PM,Day 02 02:35AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:03PM,Day 02 02:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:03PM,Day 02 02:35AM,ElectricityTrader1,Got all offers:
+01:35:03PM,Day 02 02:37AM,ElectricityTrader1,Consumed 1 units. 259 remaining.
+01:35:04PM,Day 02 03:03AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:04PM,Day 02 03:03AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:04PM,Day 02 03:03AM,ElectricityTrader1,Got all offers:
+01:35:04PM,Day 02 03:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:04PM,Day 02 03:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:04PM,Day 02 03:05AM,ElectricityTrader1,Got all offers:
+01:35:04PM,Day 02 03:07AM,ElectricityTrader1,Consumed 3 units. 256 remaining.
+01:35:05PM,Day 02 03:31AM,ElectricityRetailer3,Produced 10.0 units. 535.0 units in hold.
+01:35:05PM,Day 02 03:31AM,ElectricityRetailer1,Produced 10.0 units. 377.0 units in hold.
+01:35:05PM,Day 02 03:31AM,ElectricityRetailer2,Produced 10.0 units. 212.0 units in hold.
+01:35:05PM,Day 02 03:37AM,ElectricityTrader1,Consumed 0 units. 256 remaining.
+01:35:06PM,Day 02 04:05AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:06PM,Day 02 04:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:06PM,Day 02 04:05AM,ElectricityTrader1,Got all offers:
+01:35:06PM,Day 02 04:07AM,ElectricityTrader1,Consumed 1 units. 255 remaining.
+01:35:07PM,Day 02 04:33AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:07PM,Day 02 04:33AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:07PM,Day 02 04:33AM,ElectricityTrader1,Got all offers:
+01:35:07PM,Day 02 04:37AM,ElectricityTrader1,Consumed 1 units. 254 remaining.
+01:35:08PM,Day 02 05:05AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:08PM,Day 02 05:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:08PM,Day 02 05:05AM,ElectricityTrader1,Got all offers:
+01:35:08PM,Day 02 05:07AM,ElectricityTrader1,Consumed 1 units. 253 remaining.
+01:35:09PM,Day 02 05:37AM,ElectricityTrader1,Consumed 0 units. 253 remaining.
+01:35:10PM,Day 02 06:01AM,ElectricityRetailer3,Produced 10.0 units. 545.0 units in hold.
+01:35:10PM,Day 02 06:01AM,ElectricityRetailer1,Produced 10.0 units. 387.0 units in hold.
+01:35:10PM,Day 02 06:01AM,ElectricityRetailer2,Produced 10.0 units. 222.0 units in hold.
+01:35:10PM,Day 02 06:05AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:10PM,Day 02 06:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:10PM,Day 02 06:05AM,ElectricityTrader1,Got all offers:
+01:35:10PM,Day 02 06:07AM,ElectricityTrader1,Consumed 1 units. 252 remaining.
+01:35:11PM,Day 02 06:35AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:11PM,Day 02 06:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:11PM,Day 02 06:35AM,ElectricityTrader1,Got all offers:
+01:35:11PM,Day 02 06:37AM,ElectricityTrader1,Consumed 2 units. 250 remaining.
+01:35:12PM,Day 02 07:02AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:35:12PM,Day 02 07:02AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:35:12PM,Day 02 07:02AM,ElectricityTrader1,Got all offers:
+01:35:12PM,Day 02 07:03AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:35:12PM,Day 02 07:03AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:35:12PM,Day 02 07:03AM,ElectricityTrader1,Got all offers:
+01:35:12PM,Day 02 07:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:12PM,Day 02 07:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:12PM,Day 02 07:05AM,ElectricityTrader1,Got all offers:
+01:35:12PM,Day 02 07:07AM,ElectricityTrader1,Consumed 13 units. 237 remaining.
+01:35:13PM,Day 02 07:32AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:35:13PM,Day 02 07:32AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:35:13PM,Day 02 07:32AM,ElectricityTrader1,Got all offers:
+01:35:13PM,Day 02 07:33AM,Microwave,-> ElectricityTrader1     [INFORM] 5
+01:35:13PM,Day 02 07:33AM,ElectricityTrader1,<- Microwave              [INFORM] 5
+01:35:13PM,Day 02 07:33AM,ElectricityTrader1,Got all offers:
+01:35:13PM,Day 02 07:33AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:35:13PM,Day 02 07:33AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:35:13PM,Day 02 07:33AM,ElectricityTrader1,Got all offers:
+01:35:13PM,Day 02 07:35AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:35:13PM,Day 02 07:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:35:13PM,Day 02 07:35AM,ElectricityTrader1,Got all offers:
+01:35:13PM,Day 02 07:37AM,ElectricityTrader1,Consumed 16 units. 221 remaining.
+01:35:14PM,Day 02 08:03AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:35:14PM,Day 02 08:03AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:35:14PM,Day 02 08:03AM,ElectricityTrader1,Got all offers:
+01:35:14PM,Day 02 08:03AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:35:14PM,Day 02 08:03AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:35:14PM,Day 02 08:03AM,ElectricityTrader1,Got all offers:
+01:35:14PM,Day 02 08:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:14PM,Day 02 08:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:14PM,Day 02 08:05AM,ElectricityTrader1,Got all offers:
+01:35:14PM,Day 02 08:07AM,ElectricityTrader1,Consumed 9 units. 212 remaining.
+01:35:15PM,Day 02 08:31AM,ElectricityRetailer3,Produced 35.0 units. 580.0 units in hold.
+01:35:15PM,Day 02 08:31AM,ElectricityRetailer1,Produced 35.0 units. 422.0 units in hold.
+01:35:15PM,Day 02 08:31AM,ElectricityRetailer2,Produced 35.0 units. 257.0 units in hold.
+01:35:15PM,Day 02 08:33AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:35:15PM,Day 02 08:33AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:35:15PM,Day 02 08:33AM,ElectricityTrader1,Got all offers:
+01:35:15PM,Day 02 08:33AM,Toaster,-> ElectricityTrader1     [INFORM] 1
+01:35:15PM,Day 02 08:33AM,ElectricityTrader1,<- Toaster                [INFORM] 1
+01:35:15PM,Day 02 08:33AM,ElectricityTrader1,Got all offers:
+01:35:15PM,Day 02 08:35AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:35:15PM,Day 02 08:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:35:15PM,Day 02 08:35AM,ElectricityTrader1,Got all offers:
+01:35:15PM,Day 02 08:37AM,ElectricityTrader1,Consumed 6 units. 206 remaining.
+01:35:16PM,Day 02 09:05AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:16PM,Day 02 09:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:16PM,Day 02 09:05AM,ElectricityTrader1,Got all offers:
+01:35:16PM,Day 02 09:07AM,ElectricityTrader1,Consumed 2 units. 204 remaining.
+01:35:17PM,Day 02 09:35AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:17PM,Day 02 09:35AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:17PM,Day 02 09:35AM,ElectricityTrader1,Got all offers:
+01:35:17PM,Day 02 09:37AM,ElectricityTrader1,Consumed 2 units. 202 remaining.
+01:35:18PM,Day 02 10:03AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:35:18PM,Day 02 10:03AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:35:18PM,Day 02 10:03AM,ElectricityTrader1,Got all offers:
+01:35:18PM,Day 02 10:05AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:18PM,Day 02 10:05AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:18PM,Day 02 10:05AM,ElectricityTrader1,Got all offers:
+01:35:18PM,Day 02 10:07AM,ElectricityTrader1,Consumed 7 units. 195 remaining.
+01:35:19PM,Day 02 10:32AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:35:19PM,Day 02 10:32AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:35:19PM,Day 02 10:32AM,ElectricityTrader1,Got all offers:
+01:35:19PM,Day 02 10:33AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:35:19PM,Day 02 10:33AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:35:19PM,Day 02 10:33AM,ElectricityTrader1,Got all offers:
+01:35:19PM,Day 02 10:36AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:19PM,Day 02 10:36AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:19PM,Day 02 10:36AM,ElectricityTrader1,Got all offers:
+01:35:19PM,Day 02 10:37AM,ElectricityTrader1,Consumed 13 units. 182 remaining.
+01:35:20PM,Day 02 11:01AM,ElectricityRetailer3,Produced 35.0 units. 615.0 units in hold.
+01:35:20PM,Day 02 11:01AM,ElectricityRetailer1,Produced 35.0 units. 457.0 units in hold.
+01:35:20PM,Day 02 11:01AM,ElectricityRetailer2,Produced 35.0 units. 292.0 units in hold.
+01:35:20PM,Day 02 11:03AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:35:20PM,Day 02 11:03AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:35:20PM,Day 02 11:03AM,ElectricityTrader1,Got all offers:
+01:35:20PM,Day 02 11:03AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:35:20PM,Day 02 11:03AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:35:20PM,Day 02 11:03AM,ElectricityTrader1,Got all offers:
+01:35:20PM,Day 02 11:03AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:35:20PM,Day 02 11:04AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:35:20PM,Day 02 11:04AM,ElectricityTrader1,Got all offers:
+01:35:20PM,Day 02 11:06AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:20PM,Day 02 11:06AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:20PM,Day 02 11:06AM,ElectricityTrader1,Got all offers:
+01:35:20PM,Day 02 11:08AM,ElectricityTrader1,Consumed 10 units. 172 remaining.
+01:35:21PM,Day 02 11:34AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:35:21PM,Day 02 11:34AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:35:21PM,Day 02 11:34AM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:21PM,Day 02 11:34AM,ElectricityTrader1,Got all offers:
+01:35:21PM,Day 02 11:34AM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:21PM,Day 02 11:34AM,ElectricityTrader1,Got all offers:
+01:35:21PM,Day 02 11:36AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:21PM,Day 02 11:36AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:21PM,Day 02 11:36AM,ElectricityTrader1,Got all offers:
+01:35:21PM,Day 02 11:38AM,ElectricityTrader1,Consumed 9 units. 163 remaining.
+01:35:22PM,Day 02 12:03PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:22PM,Day 02 12:03PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:22PM,Day 02 12:03PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:35:22PM,Day 02 12:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:35:22PM,Day 02 12:04PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:22PM,Day 02 12:04PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:04PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:22PM,Day 02 12:04PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:06PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:22PM,Day 02 12:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:22PM,Day 02 12:06PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Consumed 19 units. 144 remaining.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 494 0.42
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 494 units for $0.42 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 369 0.20
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 494 0.42
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 369 units for $0.20 each.
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 494 units for $0.42 each.
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 124 0.16
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 369 0.20
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 124 units for $0.16 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 369 units for $0.20 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 124 0.16
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 124 units for $0.16 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer2: 124 units for  $0.16 per unit. Total price:     $19.84
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer1: 369 units for  $0.20 per unit. Total price:     $73.80
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer3: 494 units for  $0.42 per unit. Total price:    $207.48
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,The best offer is $0.16 per unit from ElectricityRetailer2
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 124
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 124
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 124 units for $19.84
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,Sold 124 units to ElectricityTrader1. 168.0 units remaining.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,32 units still required.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 324 0.41
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 324 units for $0.41 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 150 0.20
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 324 0.41
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 150 units for $0.20 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 324 units for $0.41 each.
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 100 0.29
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 150 0.20
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 100 units for $0.29 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 150 units for $0.20 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 100 0.29
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 100 units for $0.29 each.
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Got all offers:
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer2: 100 units for  $0.29 per unit. Total price:     $29.00
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer1: 150 units for  $0.20 per unit. Total price:     $30.00
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Offer from ElectricityRetailer3: 324 units for  $0.41 per unit. Total price:    $132.84
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,The best offer is $0.20 per unit from ElectricityRetailer1
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer2   [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Declined offer from ElectricityRetailer2
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer2,<- ElectricityTrader1     [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,-> ElectricityRetailer1   [AGREE] 32
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,<- ElectricityTrader1     [AGREE] 32
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer1. Purchased 32 units for $6.40
+01:35:22PM,Day 02 12:08PM,ElectricityTrader1,Power requirements have been met.
+01:35:22PM,Day 02 12:08PM,ElectricityRetailer1,Sold 32 units to ElectricityTrader1. 425.0 units remaining.
+01:35:23PM,Day 02 12:33PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:23PM,Day 02 12:33PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:23PM,Day 02 12:33PM,ElectricityTrader1,Got all offers:
+01:35:23PM,Day 02 12:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:35:23PM,Day 02 12:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:35:23PM,Day 02 12:34PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:23PM,Day 02 12:34PM,ElectricityTrader1,Got all offers:
+01:35:23PM,Day 02 12:34PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:23PM,Day 02 12:34PM,ElectricityTrader1,Got all offers:
+01:35:23PM,Day 02 12:36PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:23PM,Day 02 12:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:23PM,Day 02 12:36PM,ElectricityTrader1,Got all offers:
+01:35:23PM,Day 02 12:38PM,ElectricityTrader1,Consumed 17 units. 283 remaining.
+01:35:24PM,Day 02 01:03PM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 4
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 4
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:03PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:03PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:24PM,Day 02 01:03PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:35:24PM,Day 02 01:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:35:24PM,Day 02 01:04PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:24PM,Day 02 01:04PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:04PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:24PM,Day 02 01:04PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:06PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:24PM,Day 02 01:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:24PM,Day 02 01:06PM,ElectricityTrader1,Got all offers:
+01:35:24PM,Day 02 01:08PM,ElectricityTrader1,Consumed 29 units. 254 remaining.
+01:35:25PM,Day 02 01:31PM,ElectricityRetailer3,Produced 35.0 units. 650.0 units in hold.
+01:35:25PM,Day 02 01:31PM,ElectricityRetailer1,Produced 35.0 units. 460.0 units in hold.
+01:35:25PM,Day 02 01:31PM,ElectricityRetailer2,Produced 35.0 units. 203.0 units in hold.
+01:35:25PM,Day 02 01:33PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:35:25PM,Day 02 01:33PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:35:25PM,Day 02 01:33PM,ElectricityTrader1,Got all offers:
+01:35:25PM,Day 02 01:33PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:35:25PM,Day 02 01:33PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:35:25PM,Day 02 01:33PM,ElectricityTrader1,Got all offers:
+01:35:25PM,Day 02 01:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:35:25PM,Day 02 01:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:35:25PM,Day 02 01:34PM,ElectricityTrader1,Got all offers:
+01:35:25PM,Day 02 01:36PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:25PM,Day 02 01:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:25PM,Day 02 01:36PM,ElectricityTrader1,Got all offers:
+01:35:25PM,Day 02 01:38PM,ElectricityTrader1,Consumed 15 units. 239 remaining.
+01:35:26PM,Day 02 02:03PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:35:26PM,Day 02 02:03PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:35:26PM,Day 02 02:03PM,ElectricityTrader1,Got all offers:
+01:35:26PM,Day 02 02:03PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:26PM,Day 02 02:03PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:26PM,Day 02 02:03PM,ElectricityTrader1,Got all offers:
+01:35:26PM,Day 02 02:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:35:26PM,Day 02 02:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:35:26PM,Day 02 02:04PM,ElectricityTrader1,Got all offers:
+01:35:26PM,Day 02 02:06PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:26PM,Day 02 02:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:26PM,Day 02 02:06PM,ElectricityTrader1,Got all offers:
+01:35:26PM,Day 02 02:08PM,ElectricityTrader1,Consumed 16 units. 223 remaining.
+01:35:27PM,Day 02 02:33PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:27PM,Day 02 02:33PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:27PM,Day 02 02:33PM,ElectricityTrader1,Got all offers:
+01:35:27PM,Day 02 02:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:35:27PM,Day 02 02:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:35:27PM,Day 02 02:34PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:27PM,Day 02 02:34PM,ElectricityTrader1,Got all offers:
+01:35:27PM,Day 02 02:34PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:27PM,Day 02 02:34PM,ElectricityTrader1,Got all offers:
+01:35:27PM,Day 02 02:36PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:27PM,Day 02 02:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:27PM,Day 02 02:36PM,ElectricityTrader1,Got all offers:
+01:35:27PM,Day 02 02:38PM,ElectricityTrader1,Consumed 16 units. 207 remaining.
+01:35:28PM,Day 02 03:03PM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:03PM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:03PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:28PM,Day 02 03:03PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:35:28PM,Day 02 03:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:35:28PM,Day 02 03:04PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:28PM,Day 02 03:04PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:04PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:28PM,Day 02 03:04PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:06PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:28PM,Day 02 03:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:28PM,Day 02 03:06PM,ElectricityTrader1,Got all offers:
+01:35:28PM,Day 02 03:08PM,ElectricityTrader1,Consumed 21 units. 186 remaining.
+01:35:29PM,Day 02 03:33PM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:35:29PM,Day 02 03:33PM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:35:29PM,Day 02 03:33PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:29PM,Day 02 03:34PM,AirCon,-> ElectricityTrader1     [INFORM] 7
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 7
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -4
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -4
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:34PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:35:29PM,Day 02 03:34PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:36PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:29PM,Day 02 03:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:29PM,Day 02 03:36PM,ElectricityTrader1,Got all offers:
+01:35:29PM,Day 02 03:38PM,ElectricityTrader1,Consumed 19 units. 167 remaining.
+01:35:30PM,Day 02 04:01PM,ElectricityRetailer3,Produced 35.0 units. 685.0 units in hold.
+01:35:30PM,Day 02 04:01PM,ElectricityRetailer1,Produced 35.0 units. 495.0 units in hold.
+01:35:30PM,Day 02 04:01PM,ElectricityRetailer2,Produced 35.0 units. 238.0 units in hold.
+01:35:30PM,Day 02 04:03PM,Microwave,-> ElectricityTrader1     [INFORM] 4
+01:35:30PM,Day 02 04:03PM,ElectricityTrader1,<- Microwave              [INFORM] 4
+01:35:30PM,Day 02 04:03PM,ElectricityTrader1,Got all offers:
+01:35:30PM,Day 02 04:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:30PM,Day 02 04:04PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,Got all offers:
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,Got all offers:
+01:35:30PM,Day 02 04:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -4
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -4
+01:35:30PM,Day 02 04:04PM,ElectricityTrader1,Got all offers:
+01:35:30PM,Day 02 04:06PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:30PM,Day 02 04:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:30PM,Day 02 04:06PM,ElectricityTrader1,Got all offers:
+01:35:30PM,Day 02 04:08PM,ElectricityTrader1,Consumed 13 units. 154 remaining.
+01:35:31PM,Day 02 04:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:31PM,Day 02 04:34PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,Got all offers:
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,Got all offers:
+01:35:31PM,Day 02 04:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:35:31PM,Day 02 04:34PM,ElectricityTrader1,Got all offers:
+01:35:31PM,Day 02 04:36PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:31PM,Day 02 04:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:31PM,Day 02 04:36PM,ElectricityTrader1,Got all offers:
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Consumed 9 units. 145 remaining.
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 526 0.37
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 526 units for $0.37 each.
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 231 0.20
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 526 0.37
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 231 units for $0.20 each.
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 526 units for $0.37 each.
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 168 0.05
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 231 0.20
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 168 units for $0.05 each.
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 231 units for $0.20 each.
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 168 0.05
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 168 units for $0.05 each.
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Got all offers:
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Offer from ElectricityRetailer2: 168 units for  $0.05 per unit. Total price:      $8.40
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Offer from ElectricityRetailer1: 231 units for  $0.20 per unit. Total price:     $46.20
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Offer from ElectricityRetailer3: 526 units for  $0.37 per unit. Total price:    $194.62
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,The best offer is $0.05 per unit from ElectricityRetailer2
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 155
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 155 units for $7.75
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 155
+01:35:31PM,Day 02 04:38PM,ElectricityTrader1,Power requirements have been met.
+01:35:31PM,Day 02 04:38PM,ElectricityRetailer2,Sold 155 units to ElectricityTrader1. 83.0 units remaining.
+01:35:32PM,Day 02 05:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,Got all offers:
+01:35:32PM,Day 02 05:04PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,Got all offers:
+01:35:32PM,Day 02 05:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:35:32PM,Day 02 05:04PM,ElectricityTrader1,Got all offers:
+01:35:32PM,Day 02 05:06PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:32PM,Day 02 05:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:32PM,Day 02 05:06PM,ElectricityTrader1,Got all offers:
+01:35:32PM,Day 02 05:08PM,ElectricityTrader1,Consumed 11 units. 289 remaining.
+01:35:33PM,Day 02 05:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,Got all offers:
+01:35:33PM,Day 02 05:34PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,Got all offers:
+01:35:33PM,Day 02 05:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:35:33PM,Day 02 05:34PM,ElectricityTrader1,Got all offers:
+01:35:33PM,Day 02 05:36PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:33PM,Day 02 05:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:33PM,Day 02 05:36PM,ElectricityTrader1,Got all offers:
+01:35:33PM,Day 02 05:38PM,ElectricityTrader1,Consumed 11 units. 278 remaining.
+01:35:34PM,Day 02 06:03PM,Microwave,-> ElectricityTrader1     [INFORM] 3
+01:35:34PM,Day 02 06:03PM,ElectricityTrader1,<- Microwave              [INFORM] 3
+01:35:34PM,Day 02 06:03PM,ElectricityTrader1,Got all offers:
+01:35:34PM,Day 02 06:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,Got all offers:
+01:35:34PM,Day 02 06:04PM,AirCon,-> ElectricityTrader1     [INFORM] 7
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,<- AirCon                 [INFORM] 7
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,Got all offers:
+01:35:34PM,Day 02 06:04PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:35:34PM,Day 02 06:04PM,ElectricityTrader1,Got all offers:
+01:35:34PM,Day 02 06:06PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:34PM,Day 02 06:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:34PM,Day 02 06:06PM,ElectricityTrader1,Got all offers:
+01:35:34PM,Day 02 06:08PM,ElectricityTrader1,Consumed 14 units. 264 remaining.
+01:35:35PM,Day 02 06:31PM,ElectricityRetailer3,Produced 35.0 units. 720.0 units in hold.
+01:35:35PM,Day 02 06:31PM,ElectricityRetailer1,Produced 35.0 units. 530.0 units in hold.
+01:35:35PM,Day 02 06:31PM,ElectricityRetailer2,Produced 35.0 units. 118.0 units in hold.
+01:35:35PM,Day 02 06:33PM,Microwave,-> ElectricityTrader1     [INFORM] 6
+01:35:35PM,Day 02 06:33PM,ElectricityTrader1,<- Microwave              [INFORM] 6
+01:35:35PM,Day 02 06:33PM,ElectricityTrader1,Got all offers:
+01:35:35PM,Day 02 06:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:35PM,Day 02 06:34PM,AirCon,-> ElectricityTrader1     [INFORM] 6
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,Got all offers:
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 6
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,Got all offers:
+01:35:35PM,Day 02 06:34PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:35:35PM,Day 02 06:34PM,ElectricityTrader1,Got all offers:
+01:35:35PM,Day 02 06:36PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:35PM,Day 02 06:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:35PM,Day 02 06:36PM,ElectricityTrader1,Got all offers:
+01:35:35PM,Day 02 06:38PM,ElectricityTrader1,Consumed 16 units. 248 remaining.
+01:35:36PM,Day 02 07:03PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:36PM,Day 02 07:03PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:36PM,Day 02 07:03PM,ElectricityTrader1,Got all offers:
+01:35:36PM,Day 02 07:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:36PM,Day 02 07:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:36PM,Day 02 07:04PM,AirCon,-> ElectricityTrader1     [INFORM] 5
+01:35:36PM,Day 02 07:04PM,ElectricityTrader1,Got all offers:
+01:35:36PM,Day 02 07:04PM,ElectricityTrader1,<- AirCon                 [INFORM] 5
+01:35:36PM,Day 02 07:04PM,ElectricityTrader1,Got all offers:
+01:35:36PM,Day 02 07:06PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:36PM,Day 02 07:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:36PM,Day 02 07:06PM,ElectricityTrader1,Got all offers:
+01:35:36PM,Day 02 07:08PM,ElectricityTrader1,Consumed 12 units. 236 remaining.
+01:35:37PM,Day 02 07:33PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:37PM,Day 02 07:33PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:37PM,Day 02 07:33PM,ElectricityTrader1,Got all offers:
+01:35:37PM,Day 02 07:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:37PM,Day 02 07:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:37PM,Day 02 07:34PM,AirCon,-> ElectricityTrader1     [INFORM] 6
+01:35:37PM,Day 02 07:34PM,ElectricityTrader1,Got all offers:
+01:35:37PM,Day 02 07:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 6
+01:35:37PM,Day 02 07:34PM,ElectricityTrader1,Got all offers:
+01:35:37PM,Day 02 07:36PM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:35:37PM,Day 02 07:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:35:37PM,Day 02 07:36PM,ElectricityTrader1,Got all offers:
+01:35:37PM,Day 02 07:38PM,ElectricityTrader1,Consumed 14 units. 222 remaining.
+01:35:38PM,Day 02 08:03PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:38PM,Day 02 08:03PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:38PM,Day 02 08:03PM,ElectricityTrader1,Got all offers:
+01:35:38PM,Day 02 08:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:38PM,Day 02 08:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:38PM,Day 02 08:04PM,AirCon,-> ElectricityTrader1     [INFORM] 4
+01:35:38PM,Day 02 08:04PM,ElectricityTrader1,Got all offers:
+01:35:38PM,Day 02 08:04PM,ElectricityTrader1,<- AirCon                 [INFORM] 4
+01:35:38PM,Day 02 08:04PM,ElectricityTrader1,Got all offers:
+01:35:38PM,Day 02 08:06PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:38PM,Day 02 08:06PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:38PM,Day 02 08:06PM,ElectricityTrader1,Got all offers:
+01:35:38PM,Day 02 08:09PM,ElectricityTrader1,Consumed 10 units. 212 remaining.
+01:35:39PM,Day 02 08:34PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,Got all offers:
+01:35:39PM,Day 02 08:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:39PM,Day 02 08:34PM,AirCon,-> ElectricityTrader1     [INFORM] 5
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,Got all offers:
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,<- AirCon                 [INFORM] 5
+01:35:39PM,Day 02 08:34PM,ElectricityTrader1,Got all offers:
+01:35:39PM,Day 02 08:36PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:39PM,Day 02 08:36PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:39PM,Day 02 08:36PM,ElectricityTrader1,Got all offers:
+01:35:39PM,Day 02 08:39PM,ElectricityTrader1,Consumed 12 units. 200 remaining.
+01:35:40PM,Day 02 09:01PM,ElectricityRetailer3,Produced 10.0 units. 730.0 units in hold.
+01:35:40PM,Day 02 09:01PM,ElectricityRetailer1,Produced 10.0 units. 540.0 units in hold.
+01:35:40PM,Day 02 09:01PM,ElectricityRetailer2,Produced 10.0 units. 128.0 units in hold.
+01:35:40PM,Day 02 09:04PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:40PM,Day 02 09:04PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:40PM,Day 02 09:04PM,ElectricityTrader1,Got all offers:
+01:35:40PM,Day 02 09:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:40PM,Day 02 09:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:40PM,Day 02 09:04PM,ElectricityTrader1,Got all offers:
+01:35:40PM,Day 02 09:07PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:40PM,Day 02 09:07PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:40PM,Day 02 09:07PM,ElectricityTrader1,Got all offers:
+01:35:40PM,Day 02 09:09PM,ElectricityTrader1,Consumed 6 units. 194 remaining.
+01:35:41PM,Day 02 09:34PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:41PM,Day 02 09:34PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:41PM,Day 02 09:34PM,ElectricityTrader1,Got all offers:
+01:35:41PM,Day 02 09:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:41PM,Day 02 09:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:41PM,Day 02 09:34PM,ElectricityTrader1,Got all offers:
+01:35:41PM,Day 02 09:39PM,ElectricityTrader1,Consumed 5 units. 189 remaining.
+01:35:42PM,Day 02 10:04PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,Got all offers:
+01:35:42PM,Day 02 10:04PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,Got all offers:
+01:35:42PM,Day 02 10:04PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:42PM,Day 02 10:04PM,ElectricityTrader1,Got all offers:
+01:35:42PM,Day 02 10:07PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:42PM,Day 02 10:07PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:42PM,Day 02 10:07PM,ElectricityTrader1,Got all offers:
+01:35:42PM,Day 02 10:09PM,ElectricityTrader1,Consumed 7 units. 182 remaining.
+01:35:43PM,Day 02 10:34PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,Got all offers:
+01:35:43PM,Day 02 10:34PM,TV,-> ElectricityTrader1     [INFORM] 3
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,<- TV                     [INFORM] 3
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,Got all offers:
+01:35:43PM,Day 02 10:34PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:43PM,Day 02 10:34PM,ElectricityTrader1,Got all offers:
+01:35:43PM,Day 02 10:39PM,ElectricityTrader1,Consumed 6 units. 176 remaining.
+01:35:44PM,Day 02 11:04PM,Lamp,-> ElectricityTrader1     [INFORM] 2
+01:35:44PM,Day 02 11:04PM,ElectricityTrader1,<- Lamp                   [INFORM] 2
+01:35:44PM,Day 02 11:04PM,ElectricityTrader1,Got all offers:
+01:35:44PM,Day 02 11:04PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:44PM,Day 02 11:04PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:44PM,Day 02 11:04PM,ElectricityTrader1,Got all offers:
+01:35:44PM,Day 02 11:07PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:44PM,Day 02 11:07PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:44PM,Day 02 11:07PM,ElectricityTrader1,Got all offers:
+01:35:44PM,Day 02 11:09PM,ElectricityTrader1,Consumed 4 units. 172 remaining.
+01:35:45PM,Day 02 11:31PM,ElectricityRetailer3,Produced 10.0 units. 740.0 units in hold.
+01:35:45PM,Day 02 11:31PM,ElectricityRetailer1,Produced 10.0 units. 550.0 units in hold.
+01:35:45PM,Day 02 11:31PM,ElectricityRetailer2,Produced 10.0 units. 138.0 units in hold.
+01:35:45PM,Day 02 11:34PM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:45PM,Day 02 11:34PM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:45PM,Day 02 11:34PM,ElectricityTrader1,Got all offers:
+01:35:45PM,Day 02 11:39PM,ElectricityTrader1,Consumed 1 units. 171 remaining.
+01:35:46PM,Day 03 12:04AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:46PM,Day 03 12:04AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:46PM,Day 03 12:04AM,ElectricityTrader1,Got all offers:
+01:35:46PM,Day 03 12:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:46PM,Day 03 12:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:46PM,Day 03 12:07AM,ElectricityTrader1,Got all offers:
+01:35:46PM,Day 03 12:09AM,ElectricityTrader1,Consumed 3 units. 168 remaining.
+01:35:47PM,Day 03 12:37AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:47PM,Day 03 12:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:47PM,Day 03 12:37AM,ElectricityTrader1,Got all offers:
+01:35:47PM,Day 03 12:39AM,ElectricityTrader1,Consumed 1 units. 167 remaining.
+01:35:48PM,Day 03 01:04AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:48PM,Day 03 01:04AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:48PM,Day 03 01:04AM,ElectricityTrader1,Got all offers:
+01:35:48PM,Day 03 01:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:48PM,Day 03 01:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:48PM,Day 03 01:07AM,ElectricityTrader1,Got all offers:
+01:35:48PM,Day 03 01:09AM,ElectricityTrader1,Consumed 3 units. 164 remaining.
+01:35:49PM,Day 03 01:37AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:49PM,Day 03 01:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:49PM,Day 03 01:37AM,ElectricityTrader1,Got all offers:
+01:35:49PM,Day 03 01:39AM,ElectricityTrader1,Consumed 1 units. 163 remaining.
+01:35:50PM,Day 03 02:01AM,ElectricityRetailer3,Produced 10.0 units. 750.0 units in hold.
+01:35:50PM,Day 03 02:01AM,ElectricityRetailer1,Produced 10.0 units. 560.0 units in hold.
+01:35:50PM,Day 03 02:01AM,ElectricityRetailer2,Produced 10.0 units. 148.0 units in hold.
+01:35:50PM,Day 03 02:05AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:50PM,Day 03 02:05AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:50PM,Day 03 02:05AM,ElectricityTrader1,Got all offers:
+01:35:50PM,Day 03 02:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:50PM,Day 03 02:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:50PM,Day 03 02:07AM,ElectricityTrader1,Got all offers:
+01:35:50PM,Day 03 02:09AM,ElectricityTrader1,Consumed 3 units. 160 remaining.
+01:35:51PM,Day 03 02:37AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:51PM,Day 03 02:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:51PM,Day 03 02:37AM,ElectricityTrader1,Got all offers:
+01:35:51PM,Day 03 02:39AM,ElectricityTrader1,Consumed 1 units. 159 remaining.
+01:35:52PM,Day 03 03:05AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:52PM,Day 03 03:05AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:52PM,Day 03 03:05AM,ElectricityTrader1,Got all offers:
+01:35:52PM,Day 03 03:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:52PM,Day 03 03:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:52PM,Day 03 03:07AM,ElectricityTrader1,Got all offers:
+01:35:52PM,Day 03 03:09AM,ElectricityTrader1,Consumed 3 units. 156 remaining.
+01:35:53PM,Day 03 03:39AM,ElectricityTrader1,Consumed 0 units. 156 remaining.
+01:35:54PM,Day 03 04:07AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:54PM,Day 03 04:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:54PM,Day 03 04:07AM,ElectricityTrader1,Got all offers:
+01:35:54PM,Day 03 04:09AM,ElectricityTrader1,Consumed 1 units. 155 remaining.
+01:35:55PM,Day 03 04:31AM,ElectricityRetailer3,Produced 10.0 units. 760.0 units in hold.
+01:35:55PM,Day 03 04:31AM,ElectricityRetailer1,Produced 10.0 units. 570.0 units in hold.
+01:35:55PM,Day 03 04:31AM,ElectricityRetailer2,Produced 10.0 units. 158.0 units in hold.
+01:35:55PM,Day 03 04:35AM,PhoneCharger,-> ElectricityTrader1     [INFORM] 1
+01:35:55PM,Day 03 04:35AM,ElectricityTrader1,<- PhoneCharger           [INFORM] 1
+01:35:55PM,Day 03 04:35AM,ElectricityTrader1,Got all offers:
+01:35:55PM,Day 03 04:39AM,ElectricityTrader1,Consumed 1 units. 154 remaining.
+01:35:56PM,Day 03 05:07AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:56PM,Day 03 05:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:56PM,Day 03 05:07AM,ElectricityTrader1,Got all offers:
+01:35:56PM,Day 03 05:09AM,ElectricityTrader1,Consumed 1 units. 153 remaining.
+01:35:57PM,Day 03 05:39AM,ElectricityTrader1,Consumed 0 units. 153 remaining.
+01:35:58PM,Day 03 06:07AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:35:58PM,Day 03 06:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:35:58PM,Day 03 06:07AM,ElectricityTrader1,Got all offers:
+01:35:58PM,Day 03 06:09AM,ElectricityTrader1,Consumed 1 units. 152 remaining.
+01:35:59PM,Day 03 06:37AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:35:59PM,Day 03 06:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:35:59PM,Day 03 06:37AM,ElectricityTrader1,Got all offers:
+01:35:59PM,Day 03 06:40AM,ElectricityTrader1,Consumed 2 units. 150 remaining.
+01:36:00PM,Day 03 07:01AM,ElectricityRetailer3,Produced 35.0 units. 795.0 units in hold.
+01:36:00PM,Day 03 07:01AM,ElectricityRetailer1,Produced 35.0 units. 605.0 units in hold.
+01:36:00PM,Day 03 07:01AM,ElectricityRetailer2,Produced 35.0 units. 193.0 units in hold.
+01:36:00PM,Day 03 07:04AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:36:00PM,Day 03 07:04AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:36:00PM,Day 03 07:04AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:04AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:36:00PM,Day 03 07:04AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:36:00PM,Day 03 07:04AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:00PM,Day 03 07:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:00PM,Day 03 07:07AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Consumed 13 units. 137 remaining.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 541 0.21
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 541 units for $0.21 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 493 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 541 0.21
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 493 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 78 0.09
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer3: 541 units for $0.21 each.
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 78 units for $0.09 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 493 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer1: 493 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 78 0.09
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer2: 78 units for $0.09 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer2:  78 units for  $0.09 per unit. Total price:      $7.02
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer1: 493 units for  $0.20 per unit. Total price:     $98.60
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer3: 541 units for  $0.21 per unit. Total price:    $113.61
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,The best offer is $0.09 per unit from ElectricityRetailer2
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 78
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 78
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 78 units for $7.02
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,Sold 78 units to ElectricityTrader1. 115.0 units remaining.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,85 units still required.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 696 0.21
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 696 units for $0.21 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 180 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 696 0.21
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 180 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer3: 696 units for $0.21 each.
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 75 0.14
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 180 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 75 units for $0.14 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer1: 180 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 75 0.14
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer2: 75 units for $0.14 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer2:  75 units for  $0.14 per unit. Total price:     $10.50
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer1: 180 units for  $0.20 per unit. Total price:     $36.00
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Offer from ElectricityRetailer3: 696 units for  $0.21 per unit. Total price:    $146.16
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,The best offer is $0.14 per unit from ElectricityRetailer2
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 75
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 75 units for $10.50
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 75
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,Sold 75 units to ElectricityTrader1. 40.0 units remaining.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,10 units still required.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 454 0.27
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 454 units for $0.27 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 298 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 454 0.27
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 298 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer3: 454 units for $0.27 each.
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 16 0.06
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 298 0.20
+01:36:00PM,Day 03 07:10AM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 16 units for $0.06 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,Received offer from ElectricityRetailer1: 298 units for $0.20 each.
+01:36:00PM,Day 03 07:10AM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 16 0.06
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Received offer from ElectricityRetailer2: 16 units for $0.06 each.
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Got all offers:
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Offer from ElectricityRetailer2:  16 units for  $0.06 per unit. Total price:      $0.96
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Offer from ElectricityRetailer1: 298 units for  $0.20 per unit. Total price:     $59.60
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Offer from ElectricityRetailer3: 454 units for  $0.27 per unit. Total price:    $122.58
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,The best offer is $0.06 per unit from ElectricityRetailer2
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:00PM,Day 03 07:11AM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:00PM,Day 03 07:11AM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 10
+01:36:00PM,Day 03 07:11AM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 10
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 10 units for $0.60
+01:36:00PM,Day 03 07:11AM,ElectricityRetailer2,Sold 10 units to ElectricityTrader1. 30.0 units remaining.
+01:36:00PM,Day 03 07:11AM,ElectricityTrader1,Power requirements have been met.
+01:36:01PM,Day 03 07:34AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,Got all offers:
+01:36:01PM,Day 03 07:34AM,Microwave,-> ElectricityTrader1     [INFORM] 5
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,<- Microwave              [INFORM] 5
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,Got all offers:
+01:36:01PM,Day 03 07:34AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:36:01PM,Day 03 07:34AM,ElectricityTrader1,Got all offers:
+01:36:01PM,Day 03 07:37AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:36:01PM,Day 03 07:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:36:01PM,Day 03 07:37AM,ElectricityTrader1,Got all offers:
+01:36:01PM,Day 03 07:40AM,ElectricityTrader1,Consumed 16 units. 284 remaining.
+01:36:02PM,Day 03 08:04AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:36:02PM,Day 03 08:04AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:36:02PM,Day 03 08:04AM,ElectricityTrader1,Got all offers:
+01:36:02PM,Day 03 08:04AM,Toaster,-> ElectricityTrader1     [INFORM] 5
+01:36:02PM,Day 03 08:04AM,ElectricityTrader1,<- Toaster                [INFORM] 5
+01:36:02PM,Day 03 08:04AM,ElectricityTrader1,Got all offers:
+01:36:02PM,Day 03 08:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:02PM,Day 03 08:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:02PM,Day 03 08:07AM,ElectricityTrader1,Got all offers:
+01:36:02PM,Day 03 08:10AM,ElectricityTrader1,Consumed 9 units. 275 remaining.
+01:36:03PM,Day 03 08:34AM,Microwave,-> ElectricityTrader1     [INFORM] 2
+01:36:03PM,Day 03 08:34AM,ElectricityTrader1,<- Microwave              [INFORM] 2
+01:36:03PM,Day 03 08:34AM,ElectricityTrader1,Got all offers:
+01:36:03PM,Day 03 08:34AM,Toaster,-> ElectricityTrader1     [INFORM] 1
+01:36:03PM,Day 03 08:34AM,ElectricityTrader1,<- Toaster                [INFORM] 1
+01:36:03PM,Day 03 08:34AM,ElectricityTrader1,Got all offers:
+01:36:03PM,Day 03 08:37AM,Fridge,-> ElectricityTrader1     [INFORM] 3
+01:36:03PM,Day 03 08:37AM,ElectricityTrader1,<- Fridge                 [INFORM] 3
+01:36:03PM,Day 03 08:37AM,ElectricityTrader1,Got all offers:
+01:36:03PM,Day 03 08:40AM,ElectricityTrader1,Consumed 6 units. 269 remaining.
+01:36:04PM,Day 03 09:07AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:04PM,Day 03 09:07AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:04PM,Day 03 09:08AM,ElectricityTrader1,Got all offers:
+01:36:04PM,Day 03 09:10AM,ElectricityTrader1,Consumed 2 units. 267 remaining.
+01:36:05PM,Day 03 09:31AM,ElectricityRetailer3,Produced 35.0 units. 830.0 units in hold.
+01:36:05PM,Day 03 09:31AM,ElectricityRetailer1,Produced 35.0 units. 640.0 units in hold.
+01:36:05PM,Day 03 09:32AM,ElectricityRetailer2,Produced 35.0 units. 65.0 units in hold.
+01:36:05PM,Day 03 09:38AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:05PM,Day 03 09:38AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:05PM,Day 03 09:38AM,ElectricityTrader1,Got all offers:
+01:36:05PM,Day 03 09:40AM,ElectricityTrader1,Consumed 2 units. 265 remaining.
+01:36:06PM,Day 03 10:04AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:36:06PM,Day 03 10:04AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:36:06PM,Day 03 10:05AM,ElectricityTrader1,Got all offers:
+01:36:06PM,Day 03 10:08AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:06PM,Day 03 10:08AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:06PM,Day 03 10:08AM,ElectricityTrader1,Got all offers:
+01:36:06PM,Day 03 10:10AM,ElectricityTrader1,Consumed 7 units. 258 remaining.
+01:36:07PM,Day 03 10:34AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 6
+01:36:07PM,Day 03 10:34AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 6
+01:36:07PM,Day 03 10:34AM,ElectricityTrader1,Got all offers:
+01:36:07PM,Day 03 10:35AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:36:07PM,Day 03 10:35AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:36:07PM,Day 03 10:35AM,ElectricityTrader1,Got all offers:
+01:36:07PM,Day 03 10:38AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:07PM,Day 03 10:38AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:07PM,Day 03 10:38AM,ElectricityTrader1,Got all offers:
+01:36:07PM,Day 03 10:40AM,ElectricityTrader1,Consumed 13 units. 245 remaining.
+01:36:08PM,Day 03 11:04AM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 3
+01:36:08PM,Day 03 11:04AM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 3
+01:36:08PM,Day 03 11:04AM,ElectricityTrader1,Got all offers:
+01:36:08PM,Day 03 11:05AM,WashingMachine,-> ElectricityTrader1     [INFORM] 6
+01:36:08PM,Day 03 11:05AM,ElectricityTrader1,<- WashingMachine         [INFORM] 6
+01:36:08PM,Day 03 11:05AM,ElectricityTrader1,Got all offers:
+01:36:08PM,Day 03 11:05AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:36:08PM,Day 03 11:05AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:36:08PM,Day 03 11:05AM,ElectricityTrader1,Got all offers:
+01:36:08PM,Day 03 11:08AM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:08PM,Day 03 11:08AM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:08PM,Day 03 11:08AM,ElectricityTrader1,Got all offers:
+01:36:08PM,Day 03 11:10AM,ElectricityTrader1,Consumed 10 units. 235 remaining.
+01:36:09PM,Day 03 11:35AM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:36:09PM,Day 03 11:35AM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:36:09PM,Day 03 11:35AM,ElectricityTrader1,Got all offers:
+01:36:09PM,Day 03 11:35AM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:36:09PM,Day 03 11:35AM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:36:09PM,Day 03 11:35AM,ElectricityTrader1,Got all offers:
+01:36:09PM,Day 03 11:38AM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:09PM,Day 03 11:38AM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:09PM,Day 03 11:38AM,ElectricityTrader1,Got all offers:
+01:36:09PM,Day 03 11:40AM,ElectricityTrader1,Consumed 9 units. 226 remaining.
+01:36:10PM,Day 03 12:01PM,ElectricityRetailer3,Produced 35.0 units. 865.0 units in hold.
+01:36:10PM,Day 03 12:02PM,ElectricityRetailer1,Produced 35.0 units. 675.0 units in hold.
+01:36:10PM,Day 03 12:02PM,ElectricityRetailer2,Produced 35.0 units. 100.0 units in hold.
+01:36:10PM,Day 03 12:05PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,Got all offers:
+01:36:10PM,Day 03 12:05PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,Got all offers:
+01:36:10PM,Day 03 12:05PM,SolarPanel,-> ElectricityTrader1     [INFORM] -1
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,<- SolarPanel             [INFORM] -1
+01:36:10PM,Day 03 12:05PM,ElectricityTrader1,Got all offers:
+01:36:10PM,Day 03 12:08PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:10PM,Day 03 12:08PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:10PM,Day 03 12:08PM,ElectricityTrader1,Got all offers:
+01:36:10PM,Day 03 12:10PM,ElectricityTrader1,Consumed 19 units. 207 remaining.
+01:36:11PM,Day 03 12:35PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,Got all offers:
+01:36:11PM,Day 03 12:35PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,Got all offers:
+01:36:11PM,Day 03 12:35PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:36:11PM,Day 03 12:35PM,ElectricityTrader1,Got all offers:
+01:36:11PM,Day 03 12:38PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:11PM,Day 03 12:38PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:11PM,Day 03 12:38PM,ElectricityTrader1,Got all offers:
+01:36:11PM,Day 03 12:40PM,ElectricityTrader1,Consumed 17 units. 190 remaining.
+01:36:12PM,Day 03 01:04PM,CoffeeMachine,-> ElectricityTrader1     [INFORM] 4
+01:36:12PM,Day 03 01:04PM,ElectricityTrader1,<- CoffeeMachine          [INFORM] 4
+01:36:12PM,Day 03 01:04PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:05PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:05PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:05PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:05PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:36:12PM,Day 03 01:05PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:08PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:12PM,Day 03 01:08PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:12PM,Day 03 01:08PM,ElectricityTrader1,Got all offers:
+01:36:12PM,Day 03 01:10PM,ElectricityTrader1,Consumed 29 units. 161 remaining.
+01:36:13PM,Day 03 01:35PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:35PM,AirCon,-> ElectricityTrader1     [INFORM] 8
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,<- AirCon                 [INFORM] 8
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:35PM,SolarPanel,-> ElectricityTrader1     [INFORM] -2
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,<- SolarPanel             [INFORM] -2
+01:36:13PM,Day 03 01:35PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:38PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:13PM,Day 03 01:38PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:13PM,Day 03 01:38PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Consumed 15 units. 146 remaining.
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 583 0.18
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 583 units for $0.18 each.
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 602 0.20
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 583 0.18
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 602 units for $0.20 each.
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 583 units for $0.18 each.
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 77 0.15
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 602 0.20
+01:36:13PM,Day 03 01:40PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 77 units for $0.15 each.
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 602 units for $0.20 each.
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 77 0.15
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 77 units for $0.15 each.
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Offer from ElectricityRetailer2:  77 units for  $0.15 per unit. Total price:     $11.55
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Offer from ElectricityRetailer1: 602 units for  $0.20 per unit. Total price:    $120.40
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,Offer from ElectricityRetailer3: 583 units for  $0.18 per unit. Total price:    $104.94
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,The best offer is $0.15 per unit from ElectricityRetailer2
+01:36:13PM,Day 03 01:40PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 77
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 77
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 77 units for $11.55
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,77 units still required.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,Sold 77 units to ElectricityTrader1. 23.0 units remaining.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 503 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 503 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 4 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 4 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 503 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 22 0.05
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 503 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 22 units for $0.05 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 4 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 4 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 22 0.05
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 22 units for $0.05 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer2:  22 units for  $0.05 per unit. Total price:      $1.10
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer1:   4 units for  $0.20 per unit. Total price:      $0.80
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer3: 503 units for  $0.20 per unit. Total price:    $100.60
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,The best offer is $0.05 per unit from ElectricityRetailer2
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 22
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 22
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 22 units for $1.10
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,Sold 22 units to ElectricityTrader1. 1.0 units remaining.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,55 units still required.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 321 0.17
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 321 units for $0.17 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 627 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 321 0.17
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 627 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 321 units for $0.17 each.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,-> ElectricityTrader1     [PROPOSE] 1 0.08
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 627 0.20
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,Sent offer to ElectricityTrader1: 1 units for $0.08 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 627 units for $0.20 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,<- ElectricityRetailer2   [PROPOSE] 1 0.08
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Received offer from ElectricityRetailer2: 1 units for $0.08 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer2:   1 units for  $0.08 per unit. Total price:      $0.08
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer1: 627 units for  $0.20 per unit. Total price:    $125.40
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Offer from ElectricityRetailer3: 321 units for  $0.17 per unit. Total price:     $54.57
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,The best offer is $0.08 per unit from ElectricityRetailer2
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Declined offer from ElectricityRetailer3
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [AGREE] 1
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer2. Purchased 1 units for $0.08
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,<- ElectricityTrader1     [AGREE] 1
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,54 units still required.
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer2,Sold 1 units to ElectricityTrader1. 0.0 units remaining.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer3...
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer3   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer1...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer1   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,-> ElectricityTrader1     [PROPOSE] 168 0.17
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,Requesting offer from ElectricityRetailer2...
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer3,Sent offer to ElectricityTrader1: 168 units for $0.17 each.
+01:36:13PM,Day 03 01:41PM,ElectricityTrader1,-> ElectricityRetailer2   [REQUEST] 
+01:36:13PM,Day 03 01:41PM,ElectricityRetailer1,-> ElectricityTrader1     [PROPOSE] 511 0.20
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,<- ElectricityRetailer3   [PROPOSE] 168 0.17
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer2,<- ElectricityTrader1     [REQUEST] 
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer1,Sent offer to ElectricityTrader1: 511 units for $0.20 each.
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Received offer from ElectricityRetailer3: 168 units for $0.17 each.
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer2,-> ElectricityTrader1     [FAILURE] 
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer2,No units remaining can't provide an offer to ElectricityTrader1.
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,<- ElectricityRetailer1   [PROPOSE] 511 0.20
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Received offer from ElectricityRetailer1: 511 units for $0.20 each.
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,<- ElectricityRetailer2   [FAILURE] 
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,No offer from ElectricityRetailer2
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Got all offers:
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Offer from ElectricityRetailer1: 511 units for  $0.20 per unit. Total price:    $102.20
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Offer from ElectricityRetailer3: 168 units for  $0.17 per unit. Total price:     $28.56
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,The best offer is $0.17 per unit from ElectricityRetailer3
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,-> ElectricityRetailer1   [REFUSE] 
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Declined offer from ElectricityRetailer1
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer1,<- ElectricityTrader1     [REFUSE] 
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,-> ElectricityRetailer3   [AGREE] 54
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Accepted best offer from ElectricityRetailer3. Purchased 54 units for $9.18
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer3,<- ElectricityTrader1     [AGREE] 54
+01:36:13PM,Day 03 01:42PM,ElectricityTrader1,Power requirements have been met.
+01:36:13PM,Day 03 01:42PM,ElectricityRetailer3,Sold 54 units to ElectricityTrader1. 811.0 units remaining.
+01:36:14PM,Day 03 02:05PM,WashingMachine,-> ElectricityTrader1     [INFORM] 8
+01:36:14PM,Day 03 02:05PM,ElectricityTrader1,<- WashingMachine         [INFORM] 8
+01:36:14PM,Day 03 02:05PM,ElectricityTrader1,Got all offers:
+01:36:14PM,Day 03 02:05PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:36:14PM,Day 03 02:05PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:36:14PM,Day 03 02:05PM,ElectricityTrader1,Got all offers:
+01:36:14PM,Day 03 02:06PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:36:14PM,Day 03 02:06PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:36:14PM,Day 03 02:06PM,ElectricityTrader1,Got all offers:
+01:36:14PM,Day 03 02:08PM,Fridge,-> ElectricityTrader1     [INFORM] 2
+01:36:14PM,Day 03 02:08PM,ElectricityTrader1,<- Fridge                 [INFORM] 2
+01:36:14PM,Day 03 02:08PM,ElectricityTrader1,Got all offers:
+01:36:14PM,Day 03 02:10PM,ElectricityTrader1,Consumed 16 units. 284 remaining.
+01:36:15PM,Day 03 02:31PM,ElectricityRetailer3,Produced 35.0 units. 846.0 units in hold.
+01:36:15PM,Day 03 02:32PM,ElectricityRetailer1,Produced 35.0 units. 710.0 units in hold.
+01:36:15PM,Day 03 02:32PM,ElectricityRetailer2,Produced 35.0 units. 35.0 units in hold.
+01:36:15PM,Day 03 02:35PM,AirCon,-> ElectricityTrader1     [INFORM] 9
+01:36:15PM,Day 03 02:35PM,ElectricityTrader1,<- AirCon                 [INFORM] 9
+01:36:15PM,Day 03 02:35PM,ElectricityTrader1,Got all offers:
+01:36:15PM,Day 03 02:35PM,Dryer,-> ElectricityTrader1     [INFORM] 9
+01:36:15PM,Day 03 02:35PM,ElectricityTrader1,<- Dryer                  [INFORM] 9
+01:36:15PM,Day 03 02:35PM,ElectricityTrader1,Got all offers:
+01:36:15PM,Day 03 02:36PM,SolarPanel,-> ElectricityTrader1     [INFORM] -3
+01:36:15PM,Day 03 02:36PM,ElectricityTrader1,<- SolarPanel             [INFORM] -3
+01:36:15PM,Day 03 02:36PM,ElectricityTrader1,Got all offers:
+01:36:15PM,Day 03 02:38PM,Fridge,-> ElectricityTrader1     [INFORM] 1
+01:36:15PM,Day 03 02:38PM,ElectricityTrader1,<- Fridge                 [INFORM] 1
+01:36:15PM,Day 03 02:38PM,ElectricityTrader1,Got all offers:
+01:36:15PM,Day 03 02:40PM,ElectricityTrader1,Consumed 16 units. 268 remaining.
