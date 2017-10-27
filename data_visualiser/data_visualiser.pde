@@ -29,11 +29,11 @@
   
   private ButtonSet buttonSet;
   
-  
-  void setup(){
+  void settings(){
     // initialise parameters for display
     fullScreen();
-    pixelDensity(1);
+  }
+  void setup(){
     background(0);
     
     typeList = new String[] {"Toaster", "AirCon", "Fridge", "Microwave", "CoffeeMachine", "Lamp", "PhoneCharger", "WashingMachine", "Dryer", "TV", "SolarPanel"};
