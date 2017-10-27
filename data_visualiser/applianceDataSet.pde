@@ -17,7 +17,7 @@ class ApplianceDataSet {
   
   void display() {
     if (isDisplayed){
-      graphMatrix[appToDisplay].display(displayWidth * 0.3);
+      graphMatrix[appToDisplay].display(width * 0.3);
     }
   }
   

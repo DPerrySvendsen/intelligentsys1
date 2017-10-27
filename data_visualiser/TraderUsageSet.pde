@@ -14,8 +14,8 @@ class TraderUsageSet {
   
   void display(){
     if (isDisplayed){
-      tradConsGraph.display(displayWidth*0.1);
-      tradRemGraph.display(displayWidth*0.55);
+      tradConsGraph.display(width*0.1);
+      tradRemGraph.display(width*0.55);
     }
   }
   

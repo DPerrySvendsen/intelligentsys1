@@ -1,5 +1,5 @@
 class Button {
-  int size = displayWidth/50;
+  float size = width/50;
   float x, y;
   String label;
   private boolean overButton;
@@ -36,7 +36,7 @@ class Button {
         fill(0);
       }
       textAlign(CENTER, CENTER);
-      textSize(24);
+      textSize(10);
       
       beginShape();
       vertex(x - 2 * size, y - size);

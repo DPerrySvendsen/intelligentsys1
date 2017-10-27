@@ -31,7 +31,7 @@
   
   void settings(){
     // initialise parameters for display
-    fullScreen();
+    size(1350, 800);
   }
   void setup(){
     background(0);

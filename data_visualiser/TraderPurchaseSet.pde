@@ -5,8 +5,8 @@ class TraderPurchaseSet {
   Graph tradPurGraph;
   Graph tradQuantGraph;
   color[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
-  float purGraphPos =  displayWidth* 0.1;
-  float quantGraphPos = displayWidth* 0.55;
+  float purGraphPos =  width* 0.1;
+  float quantGraphPos = width* 0.55;
   
   TraderPurchaseSet(){
     tradPurGraph = new Graph();
@@ -19,19 +19,19 @@ class TraderPurchaseSet {
     if (isDisplayed) {
       tradPurGraph.display(purGraphPos);
       tradQuantGraph.display(quantGraphPos);
-      textSize(30);
+      textSize(14);
       fill(col[0]);
-      text("Retailer 1", purGraphPos + displayWidth * 0.1, displayHeight * 0.78);
+      text("Retailer 1", purGraphPos + width * 0.1, height * 0.78);
       fill(col[1]);
-      text("Retailer 2", purGraphPos + displayWidth * 0.2, displayHeight * 0.78);
+      text("Retailer 2", purGraphPos + width * 0.2, height * 0.78);
       fill(col[2]);
-      text("Retailer 3", purGraphPos + displayWidth * 0.3, displayHeight * 0.78);
+      text("Retailer 3", purGraphPos + width * 0.3, height * 0.78);
       fill(col[0]);
-      text("Retailer 1", quantGraphPos + displayWidth * 0.1, displayHeight * 0.78);
+      text("Retailer 1", quantGraphPos + width * 0.1, height * 0.78);
       fill(col[1]);
-      text("Retailer 2", quantGraphPos + displayWidth * 0.2, displayHeight * 0.78);
+      text("Retailer 2", quantGraphPos + width * 0.2, height * 0.78);
       fill(col[2]);
-      text("Retailer 3", quantGraphPos + displayWidth * 0.3, displayHeight * 0.78);
+      text("Retailer 3", quantGraphPos + width * 0.3, height * 0.78);
     }
   }
   
