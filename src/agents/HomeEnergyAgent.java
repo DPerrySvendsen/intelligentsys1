@@ -24,7 +24,7 @@ import jade.lang.acl.ACLMessage;
 
 public class HomeEnergyAgent extends Agent {
 
-	//Enable Test Cases
+	// Enable Test Cases
 	private static boolean enableUnitTesting = true;
 	private int unitTestIndex = 0;
 	
@@ -55,6 +55,9 @@ public class HomeEnergyAgent extends Agent {
 		DATE_FORMAT_SIMULATED.setTimeZone(TimeZone.getTimeZone("GMT"));
 		// Print a message so we know the agent has come online
 		log("Hello World!");
+		if (isTestingEnabled()) {
+			log("WARNING: Unit testing mode is enabled.");
+		}
 		// Create the output file (or clear it if it already exists)
 		createFile(OUTPUT_FILENAME);
 	}
@@ -253,23 +256,23 @@ public class HomeEnergyAgent extends Agent {
 	}
 	
 	// Returns the formatted simulated time
-	private String getFormattedSimulatedTime() {
+	private String getFormattedSimulatedTime () {
 		return DATE_FORMAT_SIMULATED.format(getSimulatedDate());
 	}
 	
-	public long getTimeScale() {
+	public long getTimeScale () {
 		return timeScale;
 	}
 	
-	public void incrementIndex() {
+	public void incrementIndex () {
 		unitTestIndex++;
 	}
 	
-	public int getTestIndex() {
+	public int getTestIndex () {
 		return unitTestIndex;
 	}
 	
-	public boolean isTestingEnabled() {
+	public boolean isTestingEnabled () {
 		return enableUnitTesting;
 	}
 }

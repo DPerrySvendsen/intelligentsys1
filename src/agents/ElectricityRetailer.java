@@ -18,11 +18,11 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 	protected void setup () {
 		super.setup();
 		
-		//Arguments.
+		// Arguments
 		Object[] args = getArguments();
 		
-		//Initialise specific calculations depending on what the retailer is to do.
-		//@param aType a integer to define what type of retailer it is. Collected from csv configuration.
+		// Initialise specific calculations depending on what the retailer is to do.
+		// @param aType a integer to define what type of retailer it is. Collected from csv configuration.
 		setupRetailerType(args[0]);
 		
 		sellPriceMax = calculateMaxPrice();
@@ -145,18 +145,15 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 			case ACLMessage.REQUEST:
 				if (unitsHeld > 0) {
 					double price = calculatePriceOffer();
-					int units = calculateUnitOffer();
+					int    units = calculateUnitOffer();
 					
-					//Test Cases
-					switch(getTestIndex()) {
-					case 0:
+					// Test Cases
+					if (isTestingEnabled()) {
 						incrementIndex();
-						break;
-					case 1:
-						price = testMultiBestCost();
-						break;
-					default:
-						break;
+						switch (getTestIndex()) {
+							case 1: price = testMultiBestCost();      break;
+							case 2: price = testNoAcceptableOffers(); break;
+						}
 					}
 
 					sendOffer(message, units, price);
@@ -215,10 +212,17 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 		unitsHeld += productionRate;
 	}
 	
-	//TEST CASES HERE
-	//Test to show when two or more retailers have the same best cost:
-	private double testMultiBestCost() {
-		incrementIndex();
-		return 0.15D;
+	// Test cases
+	
+	// Two or more retailers have the same best cost
+	private double testMultiBestCost () {
+		log("Test case: testMultiBestCost");
+		return 0.15;
+	}
+	
+	// All retailers return offers outside the acceptable range
+	private double testNoAcceptableOffers () {
+		log("Test case: testNoAcceptableOffers");
+		return 999;
 	}
 }
