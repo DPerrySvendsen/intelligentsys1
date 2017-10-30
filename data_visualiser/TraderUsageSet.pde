@@ -10,11 +10,13 @@ class TraderUsageSet {
     tradRemGraph = new Graph();
     tradConsGraph.setTitle("Trader Consumption");
     tradRemGraph.setTitle("Trader Units Remaining");
+    tradConsGraph.setYTitle("units used");
+    tradRemGraph.setYTitle("units remaining");
   }
   
   void display(){
     if (isDisplayed){
-      tradConsGraph.display(width*0.1);
+      tradConsGraph.display(width*0.11);
       tradRemGraph.display(width*0.55);
     }
   }

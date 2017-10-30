@@ -5,7 +5,7 @@ class TraderPurchaseSet {
   Graph tradPurGraph;
   Graph tradQuantGraph;
   color[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
-  float purGraphPos =  width* 0.1;
+  float purGraphPos =  width* 0.11;
   float quantGraphPos = width* 0.55;
   
   TraderPurchaseSet(){
@@ -13,6 +13,8 @@ class TraderPurchaseSet {
     tradQuantGraph = new Graph();
     tradPurGraph.setTitle("Trader Purchase Total Price");
     tradQuantGraph.setTitle("Trader Purchase Quantity");
+    tradPurGraph.setYTitle("total price");
+    tradQuantGraph.setYTitle("units purchased");
   }
   
   void display(){

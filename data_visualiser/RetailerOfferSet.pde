@@ -4,7 +4,7 @@ class RetailerOfferSet {
   boolean isDisplayed;
   Graph retOffGraph;
   Graph retQuantGraph;
-  float retGraphPos = width*0.1;
+  float retGraphPos = width*0.11;
   float quantGraphPos = width*0.55;
   color[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
   
@@ -13,6 +13,8 @@ class RetailerOfferSet {
     retQuantGraph = new Graph();
     retOffGraph.setTitle("Retailer Offer Total Price");
     retQuantGraph.setTitle("Retailer Offer Quantity");
+    retOffGraph.setYTitle("Total Price");
+    retQuantGraph.setYTitle("Units offered");
   }
   
   void display(){

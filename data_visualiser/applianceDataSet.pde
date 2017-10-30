@@ -11,13 +11,19 @@ class ApplianceDataSet {
     for(int i = 0;  i < typeList.length; i++) {
       String title = typeList[i];
       graphMatrix[i] = new Graph();
-      graphMatrix[i].setTitle(title);
+      graphMatrix[i].setTitle(title + " power units used");
+      if (typeList[i].contains("Solar")) {
+        graphMatrix[i].setYTitle("units generated");
+      }
+      else {
+        graphMatrix[i].setYTitle("units used");
+      }
     }
   }
   
   void display() {
     if (isDisplayed){
-      graphMatrix[appToDisplay].display(width * 0.3);
+      graphMatrix[appToDisplay].display(width * 0.33);
     }
   }
   

@@ -31,7 +31,7 @@
   
   void settings(){
     // initialise parameters for display
-    size(1350, 800);
+    size(1350, 768);
   }
   void setup(){
     background(0);
