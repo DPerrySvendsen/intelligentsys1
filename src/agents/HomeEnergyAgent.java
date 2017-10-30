@@ -16,6 +16,7 @@ import java.util.TimeZone;
 
 import jade.core.AID;
 import jade.core.Agent;
+import jade.core.behaviours.WakerBehaviour;
 import jade.domain.AMSService;
 import jade.domain.FIPAException;
 import jade.domain.FIPAAgentManagement.AMSAgentDescription;
@@ -33,7 +34,10 @@ public class HomeEnergyAgent extends Agent {
 	private static final SimpleDateFormat DATE_FORMAT_SYSTEM    = new SimpleDateFormat("hh:mm:ssaa"); 
 	
 	// One (system) second equals how many (simulated) minutes?
-	private static long timeScale = 30;
+	private static final int TIME_SCALE = 30;
+	// How many (simulated) days should the system run for?
+	private static final int TOTAL_RUN_DAYS = 7;
+			
 	private static long startupTime = System.currentTimeMillis();
 	
 	public static String padRight (String s, int n) {
@@ -60,6 +64,14 @@ public class HomeEnergyAgent extends Agent {
 		}
 		// Create the output file (or clear it if it already exists)
 		createFile(OUTPUT_FILENAME);
+
+		// After the timeout has expired, kill the agent
+		addBehaviour(new WakerBehaviour(this, (60 * 24 * TOTAL_RUN_DAYS) / getTimeScale() * 1000) {
+			protected void handleElapsedTimeout () {
+				log(TOTAL_RUN_DAYS + " day timeout has expired. Shutting down...");
+				doDelete();
+			}
+		});
 	}
 	
 	private void createFile (String path) {
@@ -241,7 +253,7 @@ public class HomeEnergyAgent extends Agent {
 	}
 	
 	private Date getSimulatedDate () {
-	    return new Date((System.currentTimeMillis() - startupTime) * 60 * timeScale);
+	    return new Date((System.currentTimeMillis() - startupTime) * 60 * TIME_SCALE);
 	}
 	
 	public Double getSimulatedHalfHour () {
@@ -261,7 +273,7 @@ public class HomeEnergyAgent extends Agent {
 	}
 	
 	public long getTimeScale () {
-		return timeScale;
+		return TIME_SCALE;
 	}
 	
 	public void incrementIndex () {
