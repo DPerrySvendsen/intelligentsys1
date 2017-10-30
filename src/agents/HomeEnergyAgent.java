@@ -24,6 +24,10 @@ import jade.lang.acl.ACLMessage;
 
 public class HomeEnergyAgent extends Agent {
 
+	//Enable Test Cases
+	private static boolean enableUnitTesting = true;
+	private static int unitTestIndex = 0;
+	
 	private static final String           OUTPUT_FILENAME       = "data_visualiser/output.csv";
 	private static final SimpleDateFormat DATE_FORMAT_SIMULATED = new SimpleDateFormat("'Day' DD hh:mmaa");
 	private static final SimpleDateFormat DATE_FORMAT_SYSTEM    = new SimpleDateFormat("hh:mm:ssaa"); 
@@ -255,5 +259,17 @@ public class HomeEnergyAgent extends Agent {
 	
 	public long getTimeScale() {
 		return timeScale;
+	}
+	
+	public static void incrementIndex() {
+		unitTestIndex++;
+	}
+	
+	public int getTestIndex() {
+		return unitTestIndex;
+	}
+	
+	public boolean isTestingEnabled() {
+		return enableUnitTesting;
 	}
 }

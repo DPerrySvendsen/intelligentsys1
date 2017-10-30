@@ -8,7 +8,7 @@ import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 public class ElectricityTrader extends HomeEnergyAgent {
-	private ArrayList<String> retailerAgents          = new ArrayList<String>();
+	private ArrayList<String> retailerAgents = new ArrayList<String>();
 	private HashMap<String, TradeOffer> offers = new HashMap<String, TradeOffer>();
 	private int pendingResponses;
 	
@@ -25,11 +25,11 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		
 		identifyRetailers();
 		
-		unitStock = 200;
+		unitStock = 250;
 		// unitUsageRate now dynamically updated by appliances
 		unitUsageRate = 0;
 		
-		unitsRequired = 100;
+		unitsRequired = 0;
 		maxBuyPrice   = 0.30D;
 		
 		isRequestSent = false;
@@ -139,13 +139,16 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		// Determine the offer with the cheapest price per unit
 		TradeOffer bestOffer = null;
 		for (TradeOffer offer : offers.values()) {
-			if (bestOffer == null || offer.getPricePerUnit() < bestOffer.getPricePerUnit()) {
-				bestOffer = offer;
+			if (bestOffer == null || offer.getPricePerUnit() <= bestOffer.getPricePerUnit()) {
+				if(bestOffer == null || offer.getUnitsToSell() >= unitsRequired) {
+					bestOffer = offer;
+				}
 			}
 		}
 		if (bestOffer == null) {
 			return;
 		}
+		
 		log("The best offer is " + formatAsPrice(bestOffer.getPricePerUnit()) + " per unit from " + bestOffer.getName());
 
 		// Reject all other offers
@@ -175,6 +178,10 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		offers.clear();
 		isRequestSent = false;
 		
+		isRequirementsMet();
+	}
+	
+	private void isRequirementsMet() {
 		if (unitsRequired == 0) {
 			log("Power requirements have been met.");
 		}
@@ -193,7 +200,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		log("Consumed " + unitsLost + " units. " + unitStock + " remaining.");
 		
 		// Request an offer when units are running low, deny if a request has already been made
-		if (unitStock < unitsRequired && !isRequestSent) {
+		if (unitStock < 100 && !isRequestSent) {
 			requestOffers();
 		}
 	}
