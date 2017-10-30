@@ -25,7 +25,7 @@ public class ElectricityTrader extends HomeEnergyAgent {
 		
 		identifyRetailers();
 		
-		unitStock = 250;
+		unitStock = 225;
 		// unitUsageRate now dynamically updated by appliances
 		unitUsageRate = 0;
 		

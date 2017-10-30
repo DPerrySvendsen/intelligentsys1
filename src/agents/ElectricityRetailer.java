@@ -148,13 +148,17 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 					int units = calculateUnitOffer();
 					
 					//Test Cases
-//					if(getTestIndex() == 0) {
-//						incrementIndex();
-//					}
-					if(getTestIndex() == 0) {
+					switch(getTestIndex()) {
+					case 0:
+						incrementIndex();
+						break;
+					case 1:
 						price = testMultiBestCost();
+						break;
+					default:
+						break;
 					}
-					
+
 					sendOffer(message, units, price);
 					break;
 				}
@@ -214,7 +218,7 @@ public class ElectricityRetailer extends HomeEnergyAgent {
 	//TEST CASES HERE
 	//Test to show when two or more retailers have the same best cost:
 	private double testMultiBestCost() {
-		//incrementIndex();
+		incrementIndex();
 		return 0.15D;
 	}
 }

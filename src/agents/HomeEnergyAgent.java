@@ -26,7 +26,7 @@ public class HomeEnergyAgent extends Agent {
 
 	//Enable Test Cases
 	private static boolean enableUnitTesting = true;
-	private static int unitTestIndex = 0;
+	private int unitTestIndex = 0;
 	
 	private static final String           OUTPUT_FILENAME       = "data_visualiser/output.csv";
 	private static final SimpleDateFormat DATE_FORMAT_SIMULATED = new SimpleDateFormat("'Day' DD hh:mmaa");
@@ -261,7 +261,7 @@ public class HomeEnergyAgent extends Agent {
 		return timeScale;
 	}
 	
-	public static void incrementIndex() {
+	public void incrementIndex() {
 		unitTestIndex++;
 	}
 	
