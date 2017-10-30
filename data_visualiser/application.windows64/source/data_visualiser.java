@@ -47,7 +47,7 @@ public class data_visualiser extends PApplet {
   
   public void settings(){
     // initialise parameters for display
-    fullScreen();
+    size(1350, 768);
   }
   public void setup(){
     background(0);
@@ -221,7 +221,7 @@ public class data_visualiser extends PApplet {
     traderUsageSet.display();
   }
 class Button {
-  int size = displayWidth/50;
+  float size = width/50;
   float x, y;
   String label;
   private boolean overButton;
@@ -258,7 +258,7 @@ class Button {
         fill(0);
       }
       textAlign(CENTER, CENTER);
-      textSize(24);
+      textSize(10);
       
       beginShape();
       vertex(x - 2 * size, y - size);
@@ -293,13 +293,13 @@ class ButtonSet {
   Button[] buttonMatrix;  
   
   ButtonSet(){
-    applianceDataButton = new Button(displayWidth * 0.2f, displayHeight * 0.9f, "APPLIANCE DATA");
-    traderPurchaseButton = new Button(displayWidth * 0.6f, displayHeight * 0.9f, "TRADER PURCHASES");
-    retailerOfferButton = new Button(displayWidth * 0.8f, displayHeight * 0.9f, "RETAILER OFFERS");
-    traderUsageButton = new Button(displayWidth * 0.4f, displayHeight * 0.9f, "TRADER USAGE");
+    applianceDataButton = new Button(width * 0.2f, height * 0.9f, "APPLIANCE DATA");
+    traderPurchaseButton = new Button(width * 0.6f, height * 0.9f, "TRADER PURCHASES");
+    retailerOfferButton = new Button(width * 0.8f, height * 0.9f, "RETAILER OFFERS");
+    traderUsageButton = new Button(width * 0.4f, height * 0.9f, "TRADER USAGE");
     buttonMatrix = new Button[typeList.length];
     for (int i = 0; i < typeList.length; i++){
-      buttonMatrix[i] = new Button((displayWidth / 12) * (i + 1) , displayHeight * 0.8f, typeList[i]);
+      buttonMatrix[i] = new Button((width / 12) * (i + 1) , height * 0.8f, typeList[i]);
     }
   }
   
@@ -334,27 +334,29 @@ class ButtonSet {
 }
 class Graph {
   float xpos;
-  float ypos = displayHeight*0.05f;
-  float size = displayWidth*.35f;
+  float ypos = height*0.05f;
+  float size = width*.33f;
   Table data;
   int[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
   float xScale;
   float yScale;
   String title;
+  String yTitle;
   
   Graph() {
     data = new Table();
     data.addColumn("xval");
     data.addColumn("yval");
     data.addColumn("id");
-    xScale = displayWidth/3/24;
-    yScale = displayWidth/6/300;
-    title = "title";
+    xScale = width/3/24;
+    yScale = width/6/300;
+    title = "X title";
+    yTitle = "Y title";
   }
   
   public void display(float xPos) {
     xpos = xPos;
-    strokeWeight(10);
+    strokeWeight(4);
     for (TableRow row : data.rows()) {
       float id = row.getFloat("id"); 
       stroke(col[PApplet.parseInt(id)]);
@@ -362,7 +364,7 @@ class Graph {
     }
     noFill();
     stroke(255);
-    strokeWeight(10);
+    strokeWeight(4);
     beginShape();
     vertex(xpos, ypos + size);
     vertex(xpos, ypos);
@@ -370,10 +372,15 @@ class Graph {
     vertex(xpos + size, ypos + size);
     endShape(CLOSE);
     textAlign(CENTER, CENTER);
-    textSize(50);
-    text(title, xpos + (size * 0.5f), ypos - (size * 0.05f));
-    text("Time", xpos + (size * 0.5f), ypos + size * 1.1f);
     textSize(20);
+    text(title, xpos + (size * 0.5f), ypos - (size * 0.05f));
+    textAlign(RIGHT, CENTER);
+    textSize(11);
+    text(yTitle, xpos - 0.05f * size, ypos);
+    textAlign(CENTER, CENTER);
+    textSize(20);
+    text("Time", xpos + (size * 0.5f), ypos + size * 1.1f);
+    textSize(10);
     text("12.00AM", xpos, ypos + size * 1.05f);
     text("6.00AM", xpos + size * 0.25f, ypos + size * 1.05f);
     text("12.00PM", xpos + size * 0.5f, ypos + size * 1.05f);
@@ -397,6 +404,10 @@ class Graph {
   public void setTitle(String input) {
     title = input;
   }
+  
+  public void setYTitle(String input) {
+    yTitle = input;
+  }
 }
 class RetailerOfferSet {
   int size;
@@ -404,8 +415,8 @@ class RetailerOfferSet {
   boolean isDisplayed;
   Graph retOffGraph;
   Graph retQuantGraph;
-  float retGraphPos = displayWidth*0.1f;
-  float quantGraphPos = displayWidth*0.55f;
+  float retGraphPos = width*0.11f;
+  float quantGraphPos = width*0.55f;
   int[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
   
   RetailerOfferSet(){
@@ -413,25 +424,27 @@ class RetailerOfferSet {
     retQuantGraph = new Graph();
     retOffGraph.setTitle("Retailer Offer Total Price");
     retQuantGraph.setTitle("Retailer Offer Quantity");
+    retOffGraph.setYTitle("Total Price");
+    retQuantGraph.setYTitle("Units offered");
   }
   
   public void display(){
     if (isDisplayed) {
       retOffGraph.display(retGraphPos);
       retQuantGraph.display(quantGraphPos);
-      textSize(30);
+      textSize(14);
       fill(col[0]);
-      text("Retailer 1", retGraphPos + displayWidth * 0.1f, displayHeight * 0.78f);
+      text("Retailer 1", retGraphPos + width * 0.1f, height * 0.78f);
       fill(col[1]);
-      text("Retailer 2", retGraphPos + displayWidth * 0.2f, displayHeight * 0.78f);
+      text("Retailer 2", retGraphPos + width * 0.2f, height * 0.78f);
       fill(col[2]);
-      text("Retailer 3", retGraphPos + displayWidth * 0.3f, displayHeight * 0.78f);
+      text("Retailer 3", retGraphPos + width * 0.3f, height * 0.78f);
       fill(col[0]);
-      text("Retailer 1", quantGraphPos + displayWidth * 0.1f, displayHeight * 0.78f);
+      text("Retailer 1", quantGraphPos + width * 0.1f, height * 0.78f);
       fill(col[1]);
-      text("Retailer 2", quantGraphPos + displayWidth * 0.2f, displayHeight * 0.78f);
+      text("Retailer 2", quantGraphPos + width * 0.2f, height * 0.78f);
       fill(col[2]);
-      text("Retailer 3", quantGraphPos + displayWidth * 0.3f, displayHeight * 0.78f);
+      text("Retailer 3", quantGraphPos + width * 0.3f, height * 0.78f);
     }
   }
   
@@ -484,33 +497,35 @@ class TraderPurchaseSet {
   Graph tradPurGraph;
   Graph tradQuantGraph;
   int[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
-  float purGraphPos =  displayWidth* 0.1f;
-  float quantGraphPos = displayWidth* 0.55f;
+  float purGraphPos =  width* 0.11f;
+  float quantGraphPos = width* 0.55f;
   
   TraderPurchaseSet(){
     tradPurGraph = new Graph();
     tradQuantGraph = new Graph();
     tradPurGraph.setTitle("Trader Purchase Total Price");
     tradQuantGraph.setTitle("Trader Purchase Quantity");
+    tradPurGraph.setYTitle("total price");
+    tradQuantGraph.setYTitle("units purchased");
   }
   
   public void display(){
     if (isDisplayed) {
       tradPurGraph.display(purGraphPos);
       tradQuantGraph.display(quantGraphPos);
-      textSize(30);
+      textSize(14);
       fill(col[0]);
-      text("Retailer 1", purGraphPos + displayWidth * 0.1f, displayHeight * 0.78f);
+      text("Retailer 1", purGraphPos + width * 0.1f, height * 0.78f);
       fill(col[1]);
-      text("Retailer 2", purGraphPos + displayWidth * 0.2f, displayHeight * 0.78f);
+      text("Retailer 2", purGraphPos + width * 0.2f, height * 0.78f);
       fill(col[2]);
-      text("Retailer 3", purGraphPos + displayWidth * 0.3f, displayHeight * 0.78f);
+      text("Retailer 3", purGraphPos + width * 0.3f, height * 0.78f);
       fill(col[0]);
-      text("Retailer 1", quantGraphPos + displayWidth * 0.1f, displayHeight * 0.78f);
+      text("Retailer 1", quantGraphPos + width * 0.1f, height * 0.78f);
       fill(col[1]);
-      text("Retailer 2", quantGraphPos + displayWidth * 0.2f, displayHeight * 0.78f);
+      text("Retailer 2", quantGraphPos + width * 0.2f, height * 0.78f);
       fill(col[2]);
-      text("Retailer 3", quantGraphPos + displayWidth * 0.3f, displayHeight * 0.78f);
+      text("Retailer 3", quantGraphPos + width * 0.3f, height * 0.78f);
     }
   }
   
@@ -568,12 +583,14 @@ class TraderUsageSet {
     tradRemGraph = new Graph();
     tradConsGraph.setTitle("Trader Consumption");
     tradRemGraph.setTitle("Trader Units Remaining");
+    tradConsGraph.setYTitle("units used");
+    tradRemGraph.setYTitle("units remaining");
   }
   
   public void display(){
     if (isDisplayed){
-      tradConsGraph.display(displayWidth*0.1f);
-      tradRemGraph.display(displayWidth*0.55f);
+      tradConsGraph.display(width*0.11f);
+      tradRemGraph.display(width*0.55f);
     }
   }
   
@@ -627,13 +644,19 @@ class ApplianceDataSet {
     for(int i = 0;  i < typeList.length; i++) {
       String title = typeList[i];
       graphMatrix[i] = new Graph();
-      graphMatrix[i].setTitle(title);
+      graphMatrix[i].setTitle(title + " power units used");
+      if (typeList[i].contains("Solar")) {
+        graphMatrix[i].setYTitle("units generated");
+      }
+      else {
+        graphMatrix[i].setYTitle("units used");
+      }
     }
   }
   
   public void display() {
     if (isDisplayed){
-      graphMatrix[appToDisplay].display(displayWidth * 0.3f);
+      graphMatrix[appToDisplay].display(width * 0.33f);
     }
   }
   
@@ -681,7 +704,7 @@ class ApplianceDataSet {
   }
 }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "--present", "--window-color=#666666", "--stop-color=#cccccc", "data_visualiser" };
+    String[] appletArgs = new String[] { "data_visualiser" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

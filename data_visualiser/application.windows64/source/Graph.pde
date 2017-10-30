@@ -1,26 +1,28 @@
 class Graph {
   float xpos;
-  float ypos = displayHeight*0.05;
-  float size = displayWidth*.35;
+  float ypos = height*0.05;
+  float size = width*.33;
   Table data;
   color[] col = {color(255, 50, 0), color(50, 255, 0), color(0, 50, 255)};
   float xScale;
   float yScale;
   String title;
+  String yTitle;
   
   Graph() {
     data = new Table();
     data.addColumn("xval");
     data.addColumn("yval");
     data.addColumn("id");
-    xScale = displayWidth/3/24;
-    yScale = displayWidth/6/300;
-    title = "title";
+    xScale = width/3/24;
+    yScale = width/6/300;
+    title = "X title";
+    yTitle = "Y title";
   }
   
   void display(float xPos) {
     xpos = xPos;
-    strokeWeight(10);
+    strokeWeight(4);
     for (TableRow row : data.rows()) {
       float id = row.getFloat("id"); 
       stroke(col[int(id)]);
@@ -28,7 +30,7 @@ class Graph {
     }
     noFill();
     stroke(255);
-    strokeWeight(10);
+    strokeWeight(4);
     beginShape();
     vertex(xpos, ypos + size);
     vertex(xpos, ypos);
@@ -36,10 +38,15 @@ class Graph {
     vertex(xpos + size, ypos + size);
     endShape(CLOSE);
     textAlign(CENTER, CENTER);
-    textSize(50);
-    text(title, xpos + (size * 0.5), ypos - (size * 0.05));
-    text("Time", xpos + (size * 0.5), ypos + size * 1.1);
     textSize(20);
+    text(title, xpos + (size * 0.5), ypos - (size * 0.05));
+    textAlign(RIGHT, CENTER);
+    textSize(11);
+    text(yTitle, xpos - 0.05 * size, ypos);
+    textAlign(CENTER, CENTER);
+    textSize(20);
+    text("Time", xpos + (size * 0.5), ypos + size * 1.1);
+    textSize(10);
     text("12.00AM", xpos, ypos + size * 1.05);
     text("6.00AM", xpos + size * 0.25, ypos + size * 1.05);
     text("12.00PM", xpos + size * 0.5, ypos + size * 1.05);
@@ -62,5 +69,9 @@ class Graph {
   
   void setTitle(String input) {
     title = input;
+  }
+  
+  void setYTitle(String input) {
+    yTitle = input;
   }
 }

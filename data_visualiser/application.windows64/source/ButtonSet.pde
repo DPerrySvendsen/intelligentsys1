@@ -4,13 +4,13 @@ class ButtonSet {
   Button[] buttonMatrix;  
   
   ButtonSet(){
-    applianceDataButton = new Button(displayWidth * 0.2, displayHeight * 0.9, "APPLIANCE DATA");
-    traderPurchaseButton = new Button(displayWidth * 0.6, displayHeight * 0.9, "TRADER PURCHASES");
-    retailerOfferButton = new Button(displayWidth * 0.8, displayHeight * 0.9, "RETAILER OFFERS");
-    traderUsageButton = new Button(displayWidth * 0.4, displayHeight * 0.9, "TRADER USAGE");
+    applianceDataButton = new Button(width * 0.2, height * 0.9, "APPLIANCE DATA");
+    traderPurchaseButton = new Button(width * 0.6, height * 0.9, "TRADER PURCHASES");
+    retailerOfferButton = new Button(width * 0.8, height * 0.9, "RETAILER OFFERS");
+    traderUsageButton = new Button(width * 0.4, height * 0.9, "TRADER USAGE");
     buttonMatrix = new Button[typeList.length];
     for (int i = 0; i < typeList.length; i++){
-      buttonMatrix[i] = new Button((displayWidth / 12) * (i + 1) , displayHeight * 0.8, typeList[i]);
+      buttonMatrix[i] = new Button((width / 12) * (i + 1) , height * 0.8, typeList[i]);
     }
   }
   
